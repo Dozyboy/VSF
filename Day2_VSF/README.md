@@ -20,6 +20,8 @@ Day2_VSF/
 ├── Mô tả công việc-2.png                      # Ảnh yêu cầu đề bài phần 2 & nộp link
 ├── Bao_Cao_Hien_Trang_Lam_Viec_Voi_AI.md      # YÊU CẦU 1: Báo cáo hiện trạng sử dụng AI
 ├── Bao_Cao_Insight_SDLC_Harness.md            # YÊU CẦU 2B: Báo cáo Insight & Trải nghiệm
+├── implementation_plan.md                    # SDLC Step 1: Bản kế hoạch kiến trúc AI
+├── walkthrough.md                             # SDLC Step 4: Bản nghiệm thu đóng gói AI
 ├── index.html                                 # YÊU CẦU 2A: Demo App Web Dashboard SDLC
 ├── style.css                                  # Stylesheet Dark Glassmorphism
 ├── app.js                                     # Logic tương tác mô phỏng 4 bước SDLC & RBAC Cage
