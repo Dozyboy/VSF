@@ -1,0 +1,40 @@
+- term: Calculator App
+  definition: Planned client-side web calculator; application source has not been implemented yet.
+  forbidden: []
+  backing: [docs/project-overview-pdr.md]
+- term: Expression
+  definition: A valid sequence of operands and operators submitted for calculation.
+  forbidden: []
+  backing: [docs/system-architecture.md]
+- term: Operator
+  definition: One of the four in-scope arithmetic operations; addition, subtraction, multiplication, or division.
+  forbidden: []
+  backing: [docs/project-overview-pdr.md]
+- term: Calculator display
+  definition: Interface region that presents current input, a result, or an error state.
+  forbidden: []
+  backing: [docs/system-architecture.md]
+- term: Calculation history
+  definition: Ordered records of completed expressions and their results; persistence and retention remain TBD.
+  forbidden: []
+  backing: [docs/project-overview-pdr.md]
+- term: Keyboard shortcut
+  definition: A keyboard input mapped to entering a value or operator, evaluating, or clearing the calculator.
+  forbidden: []
+  backing: [docs/project-overview-pdr.md]
+- term: Glassmorphism
+  definition: Visual style using translucent surfaces, background blur, subtle borders, and perceived depth.
+  forbidden: []
+  backing: [docs/project-overview-pdr.md]
+- term: Responsive layout
+  definition: A layout that remains readable and operable across supported viewport sizes.
+  forbidden: []
+  backing: [docs/project-overview-pdr.md]
+- term: SSOT
+  definition: Single source of truth consumed by planning and implementation workflows.
+  forbidden: []
+  backing: [docs/glossary.yaml]
+- term: TBD
+  definition: A detail that has not been decided and must be resolved before dependent implementation proceeds.
+  forbidden: []
+  backing: []

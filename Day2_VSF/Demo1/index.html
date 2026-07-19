@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Glassmorphism Calculator — Máy tính thông minh</title>
+  <meta name="description" content="Ứng dụng máy tính web giao diện Dark Mode Glassmorphism sang trọng, hỗ trợ phím tắt bàn phím và lưu lịch sử tính toán.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient background glow effects -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+  <main class="app-container">
+    <header class="app-header">
+      <div class="brand-logo">
+        <span class="logo-icon">🧮</span>
+        <h1>Smart <span>Calculator</span></h1>
+      </div>
+      <div class="glass-badge">v1.0 Pro</div>
+    </header>
+
+    <div class="calculator-layout">
+      <!-- Calculator Body -->
+      <section class="calculator-card glass-panel">
+        <div class="screen-container">
+          <div class="screen-previous" id="display-previous"></div>
+          <div class="screen-current" id="display-current">0</div>
+        </div>
+
+        <div class="keypad-grid">
+          <!-- Row 1 -->
+          <button type="button" class="btn-key btn-function" data-key="C" data-type="function">AC</button>
+          <button type="button" class="btn-key btn-function" data-key="DEL" data-type="function">⌫</button>
+          <button type="button" class="btn-key btn-function" data-key="%" data-type="function">%</button>
+          <button type="button" class="btn-key btn-operator" data-key="÷" data-type="operator">÷</button>
+
+          <!-- Row 2 -->
+          <button type="button" class="btn-key btn-num" data-key="7" data-type="number">7</button>
+          <button type="button" class="btn-key btn-num" data-key="8" data-type="number">8</button>
+          <button type="button" class="btn-key btn-num" data-key="9" data-type="number">9</button>
+          <button type="button" class="btn-key btn-operator" data-key="×" data-type="operator">×</button>
+
+          <!-- Row 3 -->
+          <button type="button" class="btn-key btn-num" data-key="4" data-type="number">4</button>
+          <button type="button" class="btn-key btn-num" data-key="5" data-type="number">5</button>
+          <button type="button" class="btn-key btn-num" data-key="6" data-type="number">6</button>
+          <button type="button" class="btn-key btn-operator" data-key="-" data-type="operator">−</button>
+
+          <!-- Row 4 -->
+          <button type="button" class="btn-key btn-num" data-key="1" data-type="number">1</button>
+          <button type="button" class="btn-key btn-num" data-key="2" data-type="number">2</button>
+          <button type="button" class="btn-key btn-num" data-key="3" data-type="number">3</button>
+          <button type="button" class="btn-key btn-operator" data-key="+" data-type="operator">+</button>
+
+          <!-- Row 5 -->
+          <button type="button" class="btn-key btn-num" data-key="±" data-type="function">±</button>
+          <button type="button" class="btn-key btn-num" data-key="0" data-type="number">0</button>
+          <button type="button" class="btn-key btn-num" data-key="." data-type="number">.</button>
+          <button type="button" class="btn-key btn-equals" data-key="=" data-type="equals">=</button>
+        </div>
+      </section>
+
+      <!-- History Sidebar -->
+      <aside class="history-card glass-panel">
+        <div class="history-header">
+          <h2>🕒 Lịch sử tính toán</h2>
+          <button type="button" id="clear-history-btn" class="btn-clear-history" title="Xóa lịch sử">Clear</button>
+        </div>
+        <div class="history-list" id="history-list">
+          <div class="history-empty">Chưa có lịch sử tính toán</div>
+        </div>
+        <div class="keyboard-tips">
+          <span>💡 Phím tắt: [0-9] [+-*/] [Enter=Equal] [Esc=AC] [Backspace=DEL]</span>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
