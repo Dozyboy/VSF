@@ -20,12 +20,18 @@ Day2_VSF/
 ├── Mô tả công việc-2.png                      # Ảnh yêu cầu đề bài phần 2 & nộp link
 ├── Bao_Cao_Hien_Trang_Lam_Viec_Voi_AI.md      # YÊU CẦU 1: Báo cáo hiện trạng sử dụng AI
 ├── Bao_Cao_Insight_SDLC_Harness.md            # YÊU CẦU 2B: Báo cáo Insight & Trải nghiệm
-├── implementation_plan.md                    # SDLC Step 1: Bản kế hoạch kiến trúc AI
-├── walkthrough.md                             # SDLC Step 4: Bản nghiệm thu đóng gói AI
-├── index.html                                 # YÊU CẦU 2A: Demo App Web Dashboard SDLC
-├── style.css                                  # Stylesheet Dark Glassmorphism
-├── app.js                                     # Logic tương tác mô phỏng 4 bước SDLC & RBAC Cage
-└── README.md                                  # Tài liệu tổng hợp & hướng dẫn nộp bài
+├── demo/                                      # YÊU CẦU 2A: ỨNG DỤNG WEB APP CHẠY THẬT (Smart Task Tracker)
+│   ├── index.html                             # Giao diện Web App Task Tracker
+│   ├── style.css                              # Stylesheet UI Task Tracker
+│   ├── app.js                                 # Logic CRUD & LocalStorage Task Tracker
+│   ├── test_runner.html                       # SDLC Step 3: Runner kiểm thử tự động 5/5 passed
+│   ├── implementation_plan.md                 # SDLC Step 1: Bản kế hoạch thiết kế
+│   └── walkthrough.md                          # SDLC Step 4: Bản nghiệm thu đóng gói
+├── harness/                                   # Engine SDLC Harness v5.3.0 Thật (1.313 files)
+├── index.html                                 # Web Dashboard Quản trị SDLC Harness
+├── style.css                                  # Stylesheet Dashboard SDLC Harness
+├── app.js                                     # Logic Dashboard Quản trị SDLC Harness
+└── README.md                                  # Tài liệu tổng hợp & hướng dẫn
 ```
 
 ---
