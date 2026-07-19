@@ -30,14 +30,14 @@ Bạn có **2 Yêu cầu đầu ra chính** cần hoàn thành để nộp bài:
 
 ### Component 1: Tài liệu Báo cáo Hiện Trạng & Insight
 
-#### [NEW] [Bao_Cao_Hien_Trang_Lam_Viec_Voi_AI.md](file:///c:/Users/Admin/OneDrive/Máy%20tính/Minh/VSF/Day2_VSF/Bao_Cao_Hien_Trang_Lam_Viec_Voi_AI.md)
+#### [NEW] [Bao_Cao_Hien_Trang_Lam_Viec_Voi_AI.md](./Bao_Cao_Hien_Trang_Lam_Viec_Voi_AI.md)
 - Báo cáo chi tiết hiện trạng sử dụng AI trong lập trình:
   - Tần suất: Hằng ngày (Daily copilot & agentic coding).
   - Phạm vi: Viết code, Review code, Unit testing, Viết tài liệu Spec, Refactoring, Debugging.
   - AI Providers & Models: Antigravity IDE (Gemini 3.5 Flash / Pro), Claude Code (Claude 3.5 Sonnet / 3.7 Sonnet), OpenAI ChatGPT Plus (GPT-4o).
   - Đánh giá điểm mạnh và rủi ro trước khi dùng Harness.
 
-#### [NEW] [Bao_Cao_Insight_SDLC_Harness.md](file:///c:/Users/Admin/OneDrive/Máy%20tính/Minh/VSF/Day2_VSF/Bao_Cao_Insight_SDLC_Harness.md)
+#### [NEW] [Bao_Cao_Insight_SDLC_Harness.md](./Bao_Cao_Insight_SDLC_Harness.md)
 - Báo cáo trải nghiệm thực tế với SDLC Harness:
   - **Thuận lợi:** Đảm bảo kỉ luật plan trước khi code, giảm rủi ro hỏng code gốc, tăng tính nhất quán và tự động kiểm thử.
   - **Khó khăn:** Thời gian khởi tạo/cấu hình ban đầu, overhead duyệt plan, giới hạn permission cage đôi khi khắt khe.
@@ -49,20 +49,20 @@ Bạn có **2 Yêu cầu đầu ra chính** cần hoàn thành để nộp bài:
 
 Tạo một ứng dụng Web App hiện đại, giao diện cực kỳ đẳng cấp (Dark Glassmorphism UI), trực quan hóa quy trình SDLC Harness và quản lý AI Workflow:
 
-#### [NEW] [index.html](file:///c:/Users/Admin/OneDrive/Máy%20tính/Minh/VSF/Day2_VSF/index.html)
+#### [NEW] [index.html](./index.html)
 - Cấu trúc HTML5 chuẩn SEO, Semantic tags, giao diện dashboard với 4 giai đoạn SDLC (Discover/Plan, Code, Test, Ship), bảng kiểm soát Auto-decision Ledger, bộ công cụ mô phỏng AI Hook Audit & Permission Cage status.
 
-#### [NEW] [style.css](file:///c:/Users/Admin/OneDrive/Máy%20tính/Minh/VSF/Day2_VSF/style.css)
+#### [NEW] [style.css](./style.css)
 - Thiết kế Vanilla CSS cao cấp: Theme Dark Mode (Slate & Neon Blue/Purple), hiệu ứng Glassmorphism, animations mượt mà, typography hiện đại từ Google Fonts (Inter / Outfit), responsive 100%.
 
-#### [NEW] [app.js](file:///c:/Users/Admin/OneDrive/Máy%20tính/Minh/VSF/Day2_VSF/app.js)
+#### [NEW] [app.js](./app.js)
 - Logic tương tác JavaScript:
   - Mô phỏng chạy quy trình SDLC 4 bước (Discover/Plan $\rightarrow$ Code $\rightarrow$ Test $\rightarrow$ Ship).
   - Trình duyệt & ghi chép Auto-decision Ledger thời gian thực.
   - Trình mô phỏng kiểm tra Permission Cage (Vùng an toàn vs Vùng bị cấm).
   - Trình tạo báo cáo xuất bản tự động (Export Report / Copy link).
 
-#### [NEW] [README.md](file:///c:/Users/Admin/OneDrive/Máy%20tính/Minh/VSF/Day2_VSF/README.md)
+#### [NEW] [README.md](./README.md)
 - Hướng dẫn tổng quan bài nộp Day 2, cấu trúc thư mục, hướng dẫn chạy ứng dụng demo local, và hướng dẫn đẩy lên Vercel/GitHub Pages để lấy Result URL.
 
 ---
