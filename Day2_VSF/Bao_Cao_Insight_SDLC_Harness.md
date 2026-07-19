@@ -1,6 +1,6 @@
 # BÁO CÁO INSIGHT & TRẢI NGHIỆM THỰC TẾ KHI ỨNG DỤNG SDLC HARNESS (v5.3.0)
 
-**Người thực hiện:** Ứng viên / Thực tập sinh  
+**Người thực hiện:** Thiệu Quang Minh  
 **Ngày báo cáo:** 19/07/2026  
 **Chủ đề:** Đánh giá trải nghiệm, thuận lợi, khó khăn và quan điểm cá nhân khi ứng dụng SDLC Harness cho AI Coding Assistant  
 **Resource tham chiếu:** [SDLC Harness Release v5.3.0](https://github.com/hieubui2409/sdlc-harness-release/releases/tag/harness-v5.3.0)

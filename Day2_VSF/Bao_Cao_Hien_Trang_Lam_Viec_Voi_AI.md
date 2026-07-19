@@ -1,6 +1,6 @@
 # BÁO CÁO HIỆN TRẠNG LÀM VIỆC VỚI AI VÀ QUY TRÌNH PHÁT TRIỂN PHẦN MỀM
 
-**Người thực hiện:** Ứng viên / Thực tập sinh  
+**Người thực hiện:** Thiệu Quang Minh  
 **Ngày báo cáo:** 19/07/2026  
 **Dự án / Nội dung:** Day 2 - Cài đặt & Ứng dụng bộ SDLC Harness  
 
