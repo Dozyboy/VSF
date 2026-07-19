@@ -12,7 +12,7 @@
 
 ---
 
-## 📁 CẤU TRÚC THƯ MỤC NỘP BÀI (DELIVERABLES BUNDLE)
+## 📁 CẤU TRÚC THƯ MỤC
 
 ```text
 Day2_VSF/
@@ -56,23 +56,3 @@ npx serve .
 # Hoặc sử dụng extension Live Server trên VS Code / Antigravity IDE
 ```
 
----
-
-## 📤 HƯỚNG DẪN ĐẨY LÊN GITHUB & VERCEL ĐỂ NỘP BÀI (SUBMISSION URL)
-
-### Bước 1: Tạo Git repository và đẩy code lên GitHub
-```bash
-git init
-git add .
-git commit -m "Full completion of Day 2 SDLC Harness task"
-git branch -M main
-git remote add origin https://github.com/<your-username>/day2-sdlc-harness.git
-git push -u origin main
-```
-
-### Bước 2: Deploy ứng dụng Web Demo lên Vercel / GitHub Pages
-- **Dùng Vercel:** Truy cập [vercel.com](https://vercel.com), import repository `day2-sdlc-harness` vừa đẩy, nhấn **Deploy**.
-- **Dùng GitHub Pages:** Vào Settings repository $\rightarrow$ Pages $\rightarrow$ Chọn branch `main` / root $\rightarrow$ Save.
-
-### Bước 3: Điền Result URL vào form bài nộp
-Copy URL từ Vercel (ví dụ: `https://day2-sdlc-harness.vercel.app`) hoặc link GitHub repository để dán vào ô **Result URL** trong giao diện nộp bài (như mô tả ở file `Mô tả công việc-2.png`).
