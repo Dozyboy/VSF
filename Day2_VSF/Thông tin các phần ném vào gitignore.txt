@@ -1,0 +1,36 @@
+Viewed .gitignore:1-8
+
+Dưới đây là chi tiết từng mục tôi đã thêm vào file [.gitignore](file:///c:/Users/Admin/OneDrive/M%C3%A1y%20t%C3%ADnh/Minh/VSF/Day2_VSF/.gitignore) và lý do tại sao phải bỏ qua chúng:
+
+---
+
+### 1. `__pycache__/` & `*.py[cod]`
+* **Là gì:** Các thư mục và tệp mã nhị phân do Python tự động biên dịch từ mã nguồn `.py` sang dạng bytecode (`.pyc`, `.pyo`, `.pyd`).
+* **Tại sao phải ném vào:**
+  * **Tránh file rác & xung đột:** Các tệp này thay đổi mỗi khi bạn chạy chương trình trên các máy tính khác nhau.
+  * **Tránh bị chặn Security Push (nguyên nhân vừa rồi):** Như đã xảy ra, mã nhị phân `.pyc` chứa các chuỗi mock key của bài test khiến GitHub nhầm tưởng là bạn làm lộ API Key thật.
+
+---
+
+### 2. `.pytest_cache/`
+* **Là gì:** Thư mục bộ nhớ đệm do công cụ chạy test `pytest` tự động tạo ra để lưu trạng thái các bài test vừa chạy (xem bài test nào đỗ/trượt).
+* **Tại sao phải ném vào:** Đây chỉ là dữ liệu tạm thời phục vụ quá trình test trên máy local của bạn, không cần thiết và không nên đưa lên repository chung.
+
+---
+
+### 3. `.coverage` & `htmlcov/`
+* **Là gì:** Tệp và thư mục chứa báo cáo đo độ phủ mã nguồn (Code Coverage - xem bài test đã chạy qua bao nhiêu % số dòng code).
+* **Tại sao phải ném vào:** Báo cáo này tự động sinh lại sau mỗi lần chạy test, đưa lên Git sẽ gây rác commit history.
+
+---
+
+### 4. `*.log`
+* **Là gì:** Các tệp nhật ký ghi lại lịch sử hoạt động hoặc lỗi của ứng dụng khi chạy (`app.log`, `error.log`,...).
+* **Tại sao phải ném vào:**
+  * File log phình to liên tục theo thời gian làm nặng Git.
+  * File log có thể chứa thông tin nhạy cảm cá nhân hoặc hệ thống.
+
+---
+
+### 💡 Tóm lại nguyên lý chung của `.gitignore`:
+Tất cả những gì **tự động sinh ra khi chạy code** (cache, file biên dịch nhị phân, báo cáo tạm, log) hoặc **file cấu hình riêng của cá nhân** đều cần đưa vào `.gitignore`. Git chỉ nên quản lý **mã nguồn gốc (source code)** do con người viết ra.
