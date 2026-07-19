@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDLC Harness v5.3.0 - AI Governance & Workflow Dashboard</title>
+    <meta name="description" content="Trang mô phỏng và quản lý quy trình phát triển phần mềm chuẩn SDLC Harness cho AI Coding Assistant.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="logo-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                    </svg>
+                </div>
+                <div class="brand-text">
+                    <h2>SDLC Harness</h2>
+                    <span class="version-tag">v5.3.0 Release</span>
+                </div>
+            </div>
+
+            <nav class="nav-menu">
+                <a href="#overview" class="nav-item active" id="nav-overview">
+                    <span class="icon">📊</span>
+                    <span>Tổng quan SDLC</span>
+                </a>
+                <a href="#workflow" class="nav-item" id="nav-workflow">
+                    <span class="icon">🔄</span>
+                    <span>Quy trình 4 Bước</span>
+                </a>
+                <a href="#cage" class="nav-item" id="nav-cage">
+                    <span class="icon">🛡️</span>
+                    <span>RBAC Permission Cage</span>
+                </a>
+                <a href="#ledger" class="nav-item" id="nav-ledger">
+                    <span class="icon">📜</span>
+                    <span>Auto-Decision Ledger</span>
+                </a>
+                <a href="#reports" class="nav-item" id="nav-reports">
+                    <span class="icon">📑</span>
+                    <span>Báo cáo Day 2</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="status-badge live">
+                    <span class="dot"></span>
+                    <span>AI Discipline: Fail-Closed</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Header Bar -->
+            <header class="top-header">
+                <div class="header-title">
+                    <h1 id="page-title">SDLC Harness Interactive Control Center</h1>
+                    <p class="subtitle">Hệ thống kỉ luật & kiểm soát vòng đời phát triển phần mềm cho AI Assistant</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-secondary" id="btn-reset-demo">
+                        <span>🔄 Reset Demo</span>
+                    </button>
+                    <button class="btn btn-primary" id="btn-run-sdlc">
+                        <span>🚀 Chạy Full Quy Trình SDLC</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Dynamic Content Sections -->
+            <div class="content-body">
+
+                <!-- Section 1: Overview & Metrics -->
+                <section id="section-overview" class="dashboard-section active">
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <div class="metric-header">
+                                <span class="metric-title">Rule System (E1)</span>
+                                <span class="metric-icon">📐</span>
+                            </div>
+                            <div class="metric-value">22 Rules</div>
+                            <div class="metric-desc">Bao gồm 8 quy tắc kỉ luật mới (v5.3.0)</div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="metric-header">
+                                <span class="metric-title">Fail-Closed Hooks</span>
+                                <span class="metric-icon">⚓</span>
+                            </div>
+                            <div class="metric-value">65 Hooks</div>
+                            <div class="metric-desc">Tự động chặn AI khi vi phạm rào chắn</div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="metric-header">
+                                <span class="metric-title">Active AI Agents</span>
+                                <span class="metric-icon">🤖</span>
+                            </div>
+                            <div class="metric-value">26 Agents</div>
+                            <div class="metric-desc">Phân quyền chức năng theo chuyên môn</div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="metric-header">
+                                <span class="metric-title">Available Skills</span>
+                                <span class="metric-icon">⚡</span>
+                            </div>
+                            <div class="metric-value">122 Skills</div>
+                            <div class="metric-desc">16 Floor + 106 Opt-in skills</div>
+                        </div>
+                    </div>
+
+                    <!-- Pipeline Visualizer -->
+                    <div class="glass-panel pipeline-panel">
+                        <h3>Vòng Đời Phát Triển Phần Mềm (SDLC Lifecycle)</h3>
+                        <div class="pipeline-steps">
+                            <div class="step-box" id="step-1-box">
+                                <div class="step-num">1</div>
+                                <div class="step-info">
+                                    <h4>Discover & Plan</h4>
+                                    <p>Tạo implementation_plan.md & check quy tắc E1</p>
+                                </div>
+                                <div class="step-status" id="step-1-status">Sẵn sàng</div>
+                            </div>
+
+                            <div class="step-arrow">➔</div>
+
+                            <div class="step-box" id="step-2-box">
+                                <div class="step-num">2</div>
+                                <div class="step-info">
+                                    <h4>Code & RBAC Cage</h4>
+                                    <p>Viết code trong vùng ghi cho phép</p>
+                                </div>
+                                <div class="step-status" id="step-2-status">Chờ duyệt</div>
+                            </div>
+
+                            <div class="step-arrow">➔</div>
+
+                            <div class="step-box" id="step-3-box">
+                                <div class="step-num">3</div>
+                                <div class="step-info">
+                                    <h4>Test & Verify</h4>
+                                    <p>Chạy fail-closed hooks & test triad</p>
+                                </div>
+                                <div class="step-status" id="step-3-status">Chờ duyệt</div>
+                            </div>
+
+                            <div class="step-arrow">➔</div>
+
+                            <div class="step-box" id="step-4-box">
+                                <div class="step-num">4</div>
+                                <div class="step-info">
+                                    <h4>Ship & Ledger</h4>
+                                    <p>Ghi nhận Ledger & đóng gói phát hành</p>
+                                </div>
+                                <div class="step-status" id="step-4-status">Chờ duyệt</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 2: Interactive Workflow -->
+                <section id="section-workflow" class="dashboard-section">
+                    <div class="glass-panel">
+                        <h3>Trình Mô Phỏng Quy Trình SDLC 4 Bước</h3>
+                        <p class="panel-desc">Theo dõi cách AI tương tác dưới sự kiểm soát của SDLC Harness:</p>
+                        
+                        <div class="interactive-console">
+                            <div class="console-header">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                                <span class="console-title">SDLC Harness Engine Output</span>
+                            </div>
+                            <div class="console-body" id="console-output">
+                                <div class="log-line system">[SYSTEM] Khởi tạo môi trường SDLC Harness v5.3.0...</div>
+                                <div class="log-line info">[INFO] Sẵn sàng kích hoạt phiên làm việc AI dưới quy trình kỉ luật.</div>
+                            </div>
+                        </div>
+
+                        <div class="action-buttons-bar">
+                            <button class="btn btn-step" id="btn-step-plan">1. Lập Plan</button>
+                            <button class="btn btn-step" id="btn-step-code">2. Viết Code</button>
+                            <button class="btn btn-step" id="btn-step-test">3. Kiểm Thử Test</button>
+                            <button class="btn btn-step" id="btn-step-ship">4. Ship Sản Phẩm</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 3: RBAC Cage -->
+                <section id="section-cage" class="dashboard-section">
+                    <div class="glass-panel">
+                        <h3>Kiểm Tra Quyền Ghi (Two-Tier Write Permission Cage)</h3>
+                        <p class="panel-desc">Thử nghiệm gửi yêu cầu ghi file để kiểm tra cơ chế phân quyền bảo vệ codebase:</p>
+
+                        <div class="cage-tester">
+                            <div class="form-group">
+                                <label for="target-path-select">Chọn đường dẫn file muốn chỉnh sửa:</label>
+                                <select id="target-path-select" class="form-control">
+                                    <option value="/src/components/Header.jsx">/src/components/Header.jsx (Vùng An Toàn - Allowed)</option>
+                                    <option value="/src/utils/calculator.js">/src/utils/calculator.js (Vùng An Toàn - Allowed)</option>
+                                    <option value="/config/core_governance.yaml">/config/core_governance.yaml (VÙNG CẤM - Deny-List Protected Floor)</option>
+                                    <option value="/.git/hooks/pre-commit">/.git/hooks/pre-commit (VÙNG CẤM - Security Core Zone)</option>
+                                    <option value="/.env.production">/.env.production (VÙNG CẤM - Secret Credentials Zone)</option>
+                                </select>
+                            </div>
+
+                            <button class="btn btn-primary" id="btn-test-cage">Chạy Audit Quyền Ghi (Audit Permission)</button>
+
+                            <div class="audit-result-box" id="audit-result">
+                                <div class="placeholder-text">Nhấn nút bên trên để kiểm tra phân quyền RBAC.</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 4: Auto-Decision Ledger -->
+                <section id="section-ledger" class="dashboard-section">
+                    <div class="glass-panel">
+                        <h3>Auto-Decision Ledger (Nhật Ký Quyết Định Tự Động)</h3>
+                        <p class="panel-desc">Nhật ký JSONL append-only tự động ghi lại các hành vi của AI khi hoạt động ở chế độ Autonomous:</p>
+
+                        <div class="ledger-table-wrapper">
+                            <table class="ledger-table">
+                                <thead>
+                                    <tr>
+                                        <th>Timestamp</th>
+                                        <th>Session ID</th>
+                                        <th>AI Mode</th>
+                                        <th>Hành động tự chọn</th>
+                                        <th>Rủi ro (Risk Level)</th>
+                                        <th>Trạng thái Review</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="ledger-rows">
+                                    <!-- Dynamic rows inserted by JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 5: Reports -->
+                <section id="section-reports" class="dashboard-section">
+                    <div class="glass-panel">
+                        <h3>Tài Liệu Báo Cáo Yêu Cầu Day 2</h3>
+                        <div class="reports-tabs">
+                            <button class="tab-btn active" id="tab-report-1">Yêu Cầu 1: Báo Cáo Hiện Trạng AI</button>
+                            <button class="tab-btn" id="tab-report-2">Yêu Cầu 2: Báo Cáo Insight Harness</button>
+                        </div>
+                        <div class="report-content-box" id="report-view-area">
+                            <!-- Loaded dynamically by JS -->
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
