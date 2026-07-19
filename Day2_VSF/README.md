@@ -20,9 +20,6 @@ Day2_VSF/
 ├── Mô tả công việc-2.png                      # Ảnh yêu cầu đề bài phần 2 & nộp link
 ├── Bao_Cao_Hien_Trang_Lam_Viec_Voi_AI.md      # YÊU CẦU 1: Báo cáo hiện trạng sử dụng AI
 ├── Bao_Cao_Insight_SDLC_Harness.md            # YÊU CẦU 2B: Báo cáo Insight & Trải nghiệm
-├── harness/                                   # Engine SDLC Harness v5.3.0 Thật (1.313 files)
-├── harness-v5.3.0.tar.gz                      # Gói nén Release Bundle v5.3.0
-├── install.ps1                                # Script tự động cài đặt SDLC Harness
 └── README.md                                  # Tài liệu tổng hợp & hướng dẫn
 ```
 
