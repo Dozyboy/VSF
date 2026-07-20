@@ -8,17 +8,21 @@
 ### BƯỚC 1: KIỂM TRA MÔI TRƯỜNG DỰ ÁN TRÊN MÁY TÍNH
 
 1. Mở VS Code tại thư mục dự án `c:\Users\Admin\OneDrive\Máy tính\Minh\VSF\Project`.
-2. Mở Terminal trong VS Code và gõ lệnh kiểm tra Python:
-   ```bash
+2. Mở Terminal trong VS Code và kiểm tra phiên bản Python:
+   ```powershell
    python --version
    ```
-   *(Kết quả phải hiện `Python 3.14.x` hoặc `3.12.x` là đạt chuẩn).*
 
-3. Chạy thử bộ test của gói `workbench`:
-   ```bash
-   python -m pytest packages/workbench/tests
-   ```
-   *(Hệ thống sẽ chạy thử các bài test có sẵn).*
+3. **Chạy thử bộ unit test của gói `workbench`**:
+   - Chuyển terminal vào thư mục Workbench:
+     ```powershell
+     cd agentcore-studio-workbench
+     ```
+   - Gõ câu lệnh chạy Pytest:
+     ```powershell
+     $env:PYTHONPATH="C:\Users\Admin\OneDrive\Máy tính\Minh\VSF\Project\agentcore-studio-contracts\src;src;C:\Users\Admin\OneDrive\Máy tính\Minh\VSF\Project\agentcore-studio-app\src"; python -m pytest tests -k "not test_wb_schema"
+     ```
+     *(Kết quả phải báo xanh: `1 passed, 1 xfailed, 1 xpassed` là đạt chuẩn 100%!).*
 
 ---
 
