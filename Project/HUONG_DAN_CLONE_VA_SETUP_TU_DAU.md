@@ -5,13 +5,22 @@
 
 ---
 
-## 🛠️ BƯỚC 0: CẤU HÌNH CHUYỂN ĐỔI URL SSH SANG HTTPS (Chỉ chạy 1 lần duy nhất)
+## 🛠️ BƯỚC 0: CẤU HÌNH BAN ĐẦU HỆ THỐNG (Chỉ chạy 1 lần duy nhất)
 
+### 🔹 1. Chuyển đổi URL SSH sang HTTPS:
 Do các submodules trong dự án mặc định được khai báo dưới dạng SSH (`git@github.com:...`), bạn chuyển hướng tự động sang HTTPS để tránh lỗi SSH Host Key Verification:
 
 ```powershell
 git config --global url."https://github.com/".insteadOf "git@github.com:"
 ```
+
+### 🔹 2. Bật chuẩn mã hóa UTF-8 cố định cho Python trên Windows:
+Tránh lỗi `UnicodeDecodeError: 'charmap' codec...` khi Python đọc các file tài liệu chứa ký tự Tiếng Việt hoặc ký tự đặc biệt:
+
+```powershell
+[System.Environment]::SetEnvironmentVariable('PYTHONUTF8', '1', 'User')
+```
+> 💡 **Lưu ý:** Sau khi chạy câu lệnh trên, bạn tắt cửa sổ PowerShell hiện tại và mở lại cửa sổ mới (hoặc mở lại Terminal trong VS Code) để máy áp dụng cấu hình vĩnh viễn.
 
 ---
 
@@ -24,6 +33,19 @@ git clone --recursive https://github.com/AI20K-VGR/agentcore-studio-kit.git
 ```
 
 *(Vì bạn đã được cấp đầy đủ quyền truy cập, tham số `--recursive` sẽ tự động clone dự án chính cùng 100% các submodules bao gồm cả `docs/reports` mà **không cần** sửa hay comment out file `.gitmodules`).*
+
+### 🔹 Cách kiểm tra xem đã clone đủ 100% Submodules chưa:
+Di chuyển vào thư mục dự án `cd agentcore-studio-kit` và gõ lệnh:
+
+```powershell
+git submodule status --recursive
+```
+
+- **Kết quả chuẩn:** Tất cả các dòng hiển thị **không có ký tự dấu trừ `-` ở đầu** (các dòng đều bắt đầu bằng khoảng trắng và mã commit hash, ví dụ: ` c1f9513... packages/workbench`).
+- **Nếu thấy có dấu trừ `-` ở đầu (chưa clone đủ hoặc bị sót):** Bạn gõ thêm câu lệnh sau để tự động tải về đầy đủ các submodules còn thiếu:
+  ```powershell
+  git submodule update --init --recursive
+  ```
 
 ---
 
@@ -120,14 +142,14 @@ Chạy bài test kiểm tra chất lượng toàn bộ dự án:
 
 - **Trên Windows PowerShell:**
   ```powershell
-  $env:PYTHONUTF8="1"; uv run pytest
+  uv run pytest
   ```
 - **Trên Linux / macOS:**
   ```bash
   make test
   ```
 
-*(Giải thích: Việc thêm `$env:PYTHONUTF8="1"` trước lệnh `uv run pytest` giúp bật chế độ UTF-8 Mode trên Windows, đảm bảo Python đọc các file tài liệu chứa ký tự Tiếng Việt hoặc ký tự đặc biệt bằng chuẩn UTF-8 thay vì bảng mã mặc định hệ thống CP1252/charmap, tránh gặp lỗi `UnicodeDecodeError`).*
+*(Chú thích: Nếu bạn đã thực hiện Bước 0.2 thiết lập `PYTHONUTF8`, bạn chỉ cần gõ đơn giản `uv run pytest` mà không cần thêm bất kỳ tiền tố nào khác).*
 
 ---
 
