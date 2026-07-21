@@ -122,17 +122,37 @@ docker compose up -d
 
 ### 🔹 3. Xóa Container & Reset Dữ liệu (Khi bị lỗi hoặc muốn làm lại từ đầu):
 
-- **Xóa toàn bộ Container + Xóa sạch Dữ liệu trong Database (Volume):**
+- **Xóa Container + Xóa dữ liệu (Volume) của dự án:**
   ```powershell
   docker compose down -v
   ```
-  > 💡 **Chú thích:** Tham số `-v` (volumes) sẽ xóa sạch dữ liệu trong Postgres để bạn reset Database về trạng thái ban đầu.
+  > 💡 **Chú thích:** Tham số `-v` (volumes) sẽ xóa sạch dữ liệu trong Postgres để bạn reset Database về trạng thái ban đầu (Image bản thiết kế vẫn giữ lại để lần sau khởi động nhanh).
+
+- **Xóa toàn bộ Container + Volume + Xóa luôn cả Docker Image của dự án:**
+  ```powershell
+  docker compose down -v --rmi all
+  ```
+  > 💡 **Chú thích:** Tham số `--rmi all` sẽ xóa thêm cả file Image (`pgvector/pgvector`) khỏi máy tính để giải phóng bộ nhớ.
 
 - **Xóa cưỡng ép 1 Container cụ thể (nếu container bị kẹt/lỗi không tắt được):**
   ```powershell
   docker rm -f studio-postgres-1
   ```
   > 💡 **Chú thích:** Tham số `-f` (force) ép buộc dừng và xóa container có tên `studio-postgres-1`.
+
+---
+
+### 🔹 4. Siêu dọn dẹp toàn bộ Docker (Làm sạch 100% Containers, Volumes, Images & Cache rác):
+
+Khi bạn muốn giải phóng tối đa dung lượng ổ đĩa đĩa hoặc dọn dẹp Docker về trạng thái trắng tinh như mới cài đặt:
+
+```powershell
+docker system prune -a --volumes -f
+```
+> ⚠️ **Chú thích:** Lệnh này sẽ xóa sạch:
+> - Tất cả các Container đã dừng.
+> - Tất cả các Docker Images không dùng đến (bao gồm cả image `pgvector`).
+> - Tất cả các Volumes & Networks rác trên toàn bộ hệ thống Docker.
 
 ---
 
