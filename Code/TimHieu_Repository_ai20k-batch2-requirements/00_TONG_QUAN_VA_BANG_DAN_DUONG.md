@@ -10,11 +10,11 @@ Repository `ai20k-batch2-requirements` là **Nguồn sự thật lõi (SSOT)** d
 
 | Bước | File cần đọc | Mục đích & Đích đến |
 | :---: | :--- | :--- |
-| **Bước 0** | [`00-orientation/pre-reading.md`](file:///C:/Users/Admin/OneDrive/M%C3%A1y%20t%C3%ADnh/Minh/VSF/Code/ai20k-batch2-requirements/00-orientation/pre-reading.md) | **Đọc đầu tiên:** Bối cảnh + Đề bài rút gọn + Các khái niệm cần tự research trước Ngày 1 để làm bài Teach-Back. |
-| **Bước 1** | [`00-orientation/brief-overview.md`](file:///C:/Users/Admin/OneDrive/M%C3%A1y%20t%C3%ADnh/Minh/VSF/Code/ai20k-batch2-requirements/00-orientation/brief-overview.md) | **Toàn cảnh 6 tuần:** Mục tiêu xây dựng cái gì, tại sao, ai sở hữu mảng nào, kịch bản demo 8 bước. |
-| **Bước 2** | [`00-orientation/roadmap-3-sprint.md`](file:///C:/Users/Admin/OneDrive/M%C3%A1y%20t%C3%ADnh/Minh/VSF/Code/ai20k-batch2-requirements/00-orientation/roadmap-3-sprint.md) | **Lộ trình 30 ngày:** Khung 3 Sprints x 2 tuần (30 ngày làm việc) + các mốc kiểm định Gate Day 10 / Day 20 / Day 30. |
-| **Bước 3** | [`00-orientation/umbrella-contract.md`](file:///C:/Users/Admin/OneDrive/M%C3%A1y%20t%C3%ADnh/Minh/VSF/Code/ai20k-batch2-requirements/00-orientation/umbrella-contract.md) | **Hiến pháp Kiến trúc Lõi:** Chi tiết 4 Hợp đồng dữ liệu Schema (Recipe, Trace, KB search, Scorecard). |
-| **Bước 4** | [`00-orientation/charter.md`](file:///C:/Users/Admin/OneDrive/M%C3%A1y%20t%C3%ADnh/Minh/VSF/Code/ai20k-batch2-requirements/00-orientation/charter.md) | **Hiến pháp Chương trình:** Ranh giới Engine \| Recipe, quy tắc NDA, các quyết định đã chốt cứng. |
+| **Bước 0** | [`00-orientation/pre-reading.md`](../../ai20k-batch2-requirements/00-orientation/pre-reading.md) | **Đọc đầu tiên:** Bối cảnh + Đề bài rút gọn + Các khái niệm cần tự research trước Ngày 1 để làm bài Teach-Back. |
+| **Bước 1** | [`00-orientation/brief-overview.md`](../../ai20k-batch2-requirements/00-orientation/brief-overview.md) | **Toàn cảnh 6 tuần:** Mục tiêu xây dựng cái gì, tại sao, ai sở hữu mảng nào, kịch bản demo 8 bước. |
+| **Bước 2** | [`00-orientation/roadmap-3-sprint.md`](../../ai20k-batch2-requirements/00-orientation/roadmap-3-sprint.md) | **Lộ trình 30 ngày:** Khung 3 Sprints x 2 tuần (30 ngày làm việc) + các mốc kiểm định Gate Day 10 / Day 20 / Day 30. |
+| **Bước 3** | [`00-orientation/umbrella-contract.md`](../../ai20k-batch2-requirements/00-orientation/umbrella-contract.md) | **Hiến pháp Kiến trúc Lõi:** Chi tiết 4 Hợp đồng dữ liệu Schema (Recipe, Trace, KB search, Scorecard). |
+| **Bước 4** | [`00-orientation/charter.md`](../../ai20k-batch2-requirements/00-orientation/charter.md) | **Hiến pháp Chương trình:** Ranh giới Engine \| Recipe, quy tắc NDA, các quyết định đã chốt cứng. |
 
 ---
 
