@@ -72,7 +72,25 @@ Tạo file `.env` từ mẫu `.env.example`:
 
 ## 📍 BƯỚC 3: KHỞI TẠO MÔI TRƯỜNG PYTHON & CÀI THƯ VIỆN (`uv sync`)
 
-Cài đặt đầy đủ các thư viện Python cho toàn bộ Workspace:
+### 🔹 1. Cài đặt công cụ `uv` (Nếu máy tính chưa cài đặt):
+`uv` là công cụ quản lý thư viện và môi trường ảo Python tốc độ cao (bắt buộc phải có để chạy lệnh `uv sync`).
+
+- **Trên Windows PowerShell (Khuyên dùng):**
+  ```powershell
+  powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+  ```
+- **Hoặc dùng pip (nếu máy đã có Python):**
+  ```powershell
+  pip install uv
+  ```
+- **Trên Linux / macOS:**
+  ```bash
+  curl -LsSf https://astral.sh/uv/install.sh | sh
+  ```
+
+> 💡 **Lưu ý quan trọng:** Sau khi cài đặt thành công `uv`, bạn cần **tắt cửa sổ PowerShell / Terminal hiện tại và mở lại cửa sổ mới** để hệ thống nhận diện câu lệnh. Kiểm tra bằng lệnh: `uv --version`.
+
+### 🔹 2. Cài đặt đầy đủ các thư viện Python cho toàn bộ Workspace:
 
 - **Trên Windows PowerShell:**
   ```powershell
