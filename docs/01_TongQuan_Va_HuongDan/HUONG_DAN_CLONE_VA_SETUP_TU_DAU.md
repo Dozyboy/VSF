@@ -26,7 +26,7 @@ Tránh lỗi `UnicodeDecodeError: 'charmap' codec...` khi Python đọc các fil
 
 ## 📍 BƯỚC 1: CLONE REPOSITORY VỀ MÁY (BAO GỒM TOÀN BỘ SUBMODULES)
 
-Mở PowerShell tại thư mục làm việc (ví dụ `C:\Users\Admin\OneDrive\Máy tính\Minh\VSF\Code`) và gõ lệnh:
+Mở PowerShell tại thư mục làm việc và gõ lệnh:
 
 ```powershell
 git clone --recursive https://github.com/AI20K-VGR/agentcore-studio-kit.git

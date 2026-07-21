@@ -35,7 +35,7 @@ agentcore-studio-kit/
 
 ### 🔑 Secret Key cất ở đâu và dùng như thế nào?
 * **Cất ở đâu:** Trong file bí mật **`apps/studio/.env`** (Ví dụ: `STUDIO_SECRET_KEY="toilagiamdoc_2026"`). File này nằm trên Backend, không bao giờ gửi về cho Frontend.
-* **Mã hóa/Giải mã ở đâu:** Trong file [tenant_wall.py](file:///c:/Users/Admin/OneDrive/M%C3%A1y%20t%C3%ADnh/Minh/VSF/Code/agentcore-studio-kit/packages/workbench/src/studio_workbench/tenant_wall.py) do **SWE (Bạn)** gõ code gọi `jwt.decode(token, os.getenv("STUDIO_SECRET_KEY"))`.
+* **Mã hóa/Giải mã ở đâu:** Trong file `packages/workbench/src/studio_workbench/tenant_wall.py` do **SWE (Bạn)** gõ code gọi `jwt.decode(token, os.getenv("STUDIO_SECRET_KEY"))`.
 
 ---
 
@@ -82,23 +82,23 @@ WHERE wb.recipes.agent_id = 'agent_101' AND v1.version = 1;
 
 Để sẵn sàng 100% gõ code, bạn chỉ cần đọc và hoàn thiện **4 File Python chính** nằm trong `packages/workbench/src/studio_workbench/`:
 
-### 1. File [validator.py](file:///c:/Users/Admin/OneDrive/M%C3%A1y%20t%C3%ADnh/Minh/VSF/Code/agentcore-studio-kit/packages/workbench/src/studio_workbench/validator.py)
+### 1. File `packages/workbench/src/studio_workbench/validator.py`
 * **Nhiệm vụ:** Viết hàm `graph_lint(recipe: Recipe) -> None`.
 * **Cần tìm hiểu:**
   * Cách duyệt qua danh sách `recipe.dag.nodes` để kiểm tra `type` phải thuộc 6 node đóng.
   * Cách kiểm tra xem có Node nào bị lặp vòng tròn (Cycle) hay không.
 
-### 2. File [publish.py](file:///c:/Users/Admin/OneDrive/M%C3%A1y%20t%C3%ADnh/Minh/VSF/Code/agentcore-studio-kit/packages/workbench/src/studio_workbench/publish.py)
+### 2. File `packages/workbench/src/studio_workbench/publish.py`
 * **Nhiệm vụ:** Viết hàm `publish(recipe, scorecard)` và `rollback(agent_id, tenant, to_version)`.
 * **Cần tìm hiểu:**
   * Luồng check `graph_lint` ➔ Check `scorecard.gate.verdict == "PASS"`.
   * Cách gọi lệnh SQL tương tác với bảng `wb.recipes` và `wb.recipe_versions`.
 
-### 3. File [tenant_wall.py](file:///c:/Users/Admin/OneDrive/M%C3%A1y%20t%C3%ADnh/Minh/VSF/Code/agentcore-studio-kit/packages/workbench/src/studio_workbench/tenant_wall.py)
+### 3. File `packages/workbench/src/studio_workbench/tenant_wall.py`
 * **Nhiệm vụ:** Viết hàm `resolve_tenant(session: object) -> str`.
 * **Cần tìm hiểu:**
   * Cách dùng thư viện `pyjwt` lấy chuỗi Token từ session ➔ Giải mã lấy ra chuỗi `tenant_id` thật (chống lỗi IDOR).
 
-### 4. File [schema.py (workbench)](file:///c:/Users/Admin/OneDrive/M%C3%A1y%20t%C3%ADnh/Minh/VSF/Code/agentcore-studio-kit/packages/workbench/src/studio_workbench/schema.py)
+### 4. File `packages/workbench/src/studio_workbench/schema.py`
 * **Nhiệm vụ:** Đọc DDL bảng Database `wb.recipes` và `wb.recipe_versions`.
 * **Cần tìm hiểu:** Xem cấu trúc các cột dữ liệu (`agent_id`, `tenant`, `instructions`, `dag`, `kb_binding`...) để phục vụ cho việc viết SQL ở file `publish.py`.
