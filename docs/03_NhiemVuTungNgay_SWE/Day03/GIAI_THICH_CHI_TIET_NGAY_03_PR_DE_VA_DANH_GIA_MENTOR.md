@@ -1,4 +1,4 @@
-# 🎓 GIẢI THÍCH CHI TIẾT NHIỆM VỤ NGÀY 3, PR CỦA DE & ĐÁNH GIÁ MENTOR (SWE — THIỆU QUANG MINH)
+# 🎓 GIẢI THÍCH CHI TIẾT NHIỆM VỤ NGÀY 3, PR CỦA DE & ĐÁNH GIÁ MENTOR (SWE — THIỆU QUANG MINH / DOZYBOY)
 
 ---
 
@@ -91,7 +91,7 @@
 
 #### 📍 Bước 5: Review PR của DE & Đóng Daily Note D3
 * Đọc bài trình bày Teach-back của DE (Nguyễn Đông Anh) trên GitHub Issue #1.
-* Tạo file báo cáo daily note `D03-report-SWE-ThieuQuangMinh.md` tại thư mục báo cáo.
+* Tạo file báo cáo daily note `docs/reports/daily-notes/2026-07-22-Dozyboy.md`.
 
 ---
 
@@ -117,11 +117,11 @@
 1. **Quyền Triage là gì?**
    - Mentor đã cấp quyền **Triage** trên GitHub cho cả team. Quyền này cho phép bạn quản lý Issue: gán nhãn (label), gán người làm (assignee), và **tự bấm nút Close Issue (đóng issue)** khi đã hoàn thành công việc mà không cần chờ Mentor bấm nút.
 2. **Quy trình báo cáo chuẩn mà Mentor yêu cầu:**
-   - **Bước A (Viết báo cáo):** Tạo file báo cáo chi tiết trong thư mục repository theo đường dẫn `./docs/reports/` (hoặc `packages/workbench/docs/reports/D03-report-SWE-ThieuQuangMinh.md`).
-   - **Bước B (Push Git):** Commit và push file báo cáo đó lên repo GitHub.
+   - **Bước A (Viết báo cáo):** Tạo file báo cáo chi tiết trong thư mục repository theo đường dẫn `docs/reports/daily-notes/2026-07-22-Dozyboy.md`.
+   - **Bước B (Push Git):** Commit và push file báo cáo đó lên repo GitHub trong submodule `docs/reports`.
    - **Bước C (Comment & Ref trên Issue):** Mở Issue Ngày 3 của bạn trên GitHub, viết 1 comment ngắn gọn:
      - Tóm tắt 3-4 dòng các việc đã làm xong trong ngày.
-     - Dán đường dẫn (**Reference / Ref**) trỏ tới file báo cáo vừa push (Ví dụ: `Ref: ./docs/reports/D03-report-SWE-ThieuQuangMinh.md`).
+     - Dán đường dẫn (**Reference / Ref**) trỏ tới file báo cáo vừa push (Ví dụ: `Ref: docs/reports/daily-notes/2026-07-22-Dozyboy.md`).
    - **Bước D (Close Issue):** Dùng quyền **Triage** bấm nút **Close Issue** để xác nhận đã hoàn thành Ngày 3.
 
 ---
@@ -130,7 +130,7 @@
 
 Hệ thống chấm điểm tự động (Test Harness / Evaluator) của Mentor chạy 12 tiêu chí kiểm tra tự động đối với tài khoản của bạn. Bạn bị `1/12` (`insufficient` = Chưa đủ bằng chứng / Chưa đạt) vì 3 nguyên nhân chính:
 
-1. **Chưa có/Chưa push file báo cáo Daily Note:** Bài test không tìm thấy file báo cáo hợp lệ của bạn tại `./docs/reports/` hoặc thiếu các nội dung minh chứng cho D1, D2, D3.
+1. **Chưa có/Chưa push file báo cáo Daily Note:** Bài test không tìm thấy file báo cáo hợp lệ của bạn tại `docs/reports/daily-notes/` hoặc thiếu các nội dung minh chứng cho D1, D2, D3.
 2. **Chưa comment ref & close Issue trên GitHub:** Mentor/Test harness kiểm tra API GitHub thấy Issue chưa có comment tóm tắt ref link báo cáo và Issue chưa được close.
 3. **Code chưa vượt qua bài test kiểm định (Fail Test / Stub chưa điền):** Các hàm `build_agent_config` và script test wiring D3 chưa được commit hoặc test pytest bị lỗi.
 
@@ -141,8 +141,8 @@ Hệ thống chấm điểm tự động (Test Harness / Evaluator) của Mentor
 Để chuyển từ **1/12 (insufficient)** lên **12/12 (PASSED)**, bạn làm đúng theo 4 bước sau:
 
 ### 🛠️ Bước 1: Hoàn thiện code Ngày 3 trong Workbench
-1. Tạo/Sửa file `packages/workbench/src/studio_workbench/builder.py` (điền hàm `build_agent_config` và `create_sample_recipe_d3` ở Phần 1.2).
-2. Tạo file test `packages/workbench/tests/test_wiring_d3.py` (như mẫu ở Bước 3 Phần 1.2).
+1. Tạo/Sửa file `packages/workbench/src/studio_workbench/builder.py`.
+2. Tạo file test `packages/workbench/tests/test_wiring_d3.py`.
 3. Thêm Docstring Google style cho tất cả các hàm.
 4. Mở PowerShell tại `packages/workbench` và chạy kiểm tra:
    ```powershell
@@ -151,34 +151,30 @@ Hệ thống chấm điểm tự động (Test Harness / Evaluator) của Mentor
    ```
 
 ### 📄 Bước 2: Viết Báo cáo Daily Note D3 đầy đủ
-Tạo file `packages/workbench/docs/reports/D03-report-SWE-ThieuQuangMinh.md` (hoặc tạo tại `docs/reports/D03-report-SWE-ThieuQuangMinh.md`) với nội dung tóm tắt:
-```markdown
-# 📊 BÁO CÁO TIẾN ĐỘ NGÀY 3 (D03-REPORT)
-- **Người thực hiện:** Thiệu Quang Minh (SWE)
-- **Ngày:** 22/07/2026
+Tạo file `docs/reports/daily-notes/2026-07-22-Dozyboy.md` chuẩn template.
 
-## ✅ Kết quả đạt được (DoD):
-1. **AgentConfig Builder:** Viết xong hàm `build_agent_config` chuẩn v0.
-2. **3-Node Recipe:** Đóng gói bản Recipe thử nghiệm 3 node: `kb-retrieve` -> `llm-step` -> `tool-call`.
-3. **Wiring:** Nối thành công Recipe sang `studio_engine.interpreter.run`.
-4. **Docstring:** Bổ sung đầy đủ chú thích Input/Output.
-5. **Review PR:** Đã review và nhận xét trên PR #1 Teach-back KB Pipeline của DE (Nguyễn Đông Anh).
-```
-
-### 📤 Bước 3: Commit và Push code lên GitHub
+### 📤 Bước 3: Commit và Push code lên GitHub Submodules
 ```powershell
-cd c:\Users\thuym\Desktop\Today\agentcore-studio-kit\packages\workbench
+# Submodule Workbench
+cd packages/workbench
 git add .
-git commit -m "feat(workbench): complete D3 tasks - builder, 3-node wiring, docstrings and D3 report"
+git commit -m "feat(workbench): complete D3 tasks - builder, 3-node wiring, docstrings"
+git push origin main
+
+# Submodule Web
+cd ../../apps/web
+git add .
+git commit -m "feat(web): add agent_config creation form for D3"
+git push origin main
+
+# Submodule Reports
+cd ../../docs/reports
+git add .
+git commit -m "docs(reports): add daily note 2026-07-22-Dozyboy.md for D3"
 git push origin main
 ```
 
 ### 💬 Bước 4: Comment ref link và Close Issue trên GitHub (Quyền Triage)
 1. Mở [Issue #1 (PR DE)](https://github.com/AI20K-VGR/agentcore-studio-kit/issues/1) ➔ Viết comment nhận xét bài Teach-back của DE.
-2. Mở **Issue Ngày 3 của bạn** trên GitHub ➔ Viết comment:
-   > **Tóm tắt tiến độ Ngày 3 (SWE - Thiệu Quang Minh):**  
-   > - ✅ Form xuất `agent_config` đúng shape recipe v0.  
-   > - ✅ 3 node `kb-retrieve -> llm-step -> tool-call` wiring thành công sang Engine.  
-   > - ✅ Đã bổ sung đầy đủ docstrings và review PR #1 của DE.  
-   > 🔗 **Ref Báo cáo chi tiết:** [D03-report-SWE-ThieuQuangMinh.md](https://github.com/AI20K-VGR/agentcore-studio-kit/blob/main/packages/workbench/docs/reports/D03-report-SWE-ThieuQuangMinh.md)
-3. Bấm nút **Close Issue** (Sử dụng quyền Triage được Mentor cấp).
+2. Mở **Issue Ngày 3 của bạn** trên GitHub ➔ Viết comment tóm tắt kèm ref link.
+3. Bấm **Close Issue** (Sử dụng quyền Triage được Mentor cấp).
