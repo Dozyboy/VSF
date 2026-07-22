@@ -219,14 +219,17 @@ Chạy bài test kiểm tra chất lượng toàn bộ dự án:
 
 ## 📍 BƯỚC 6: KHỞI CHẠY GIAO DIỆN WEB FRONTEND (`apps/web`)
 
-Để bật trang web UI kéo thả Agent trên máy local:
+### 🔹 1. Khắc phục lỗi Execution Policy trên Windows PowerShell (Nếu gặp lỗi khi gõ npm):
 
-> ⚠️ **LƯU Ý VỀ LỖI RUNNING SCRIPTS IS DISABLED (EXECUTION POLICY) KHI CHẠY NPM:**
-> Nếu bạn dùng Windows PowerShell và gặp lỗi chặn file `npm.ps1` (`File ... npm.ps1 cannot be loaded because running scripts is disabled on this system`), hãy mở PowerShell và chạy câu lệnh sau để cấp quyền thực thi script cho tài khoản hiện tại:
-> ```powershell
-> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-> ```
-> *(Khi được hỏi xác nhận, gõ `Y` rồi nhấn Enter. Bạn cũng có thể chuyển sang dùng Command Prompt (CMD) hoặc Git Bash để tránh bị kiểm tra Execution Policy).*
+Nếu bạn sử dụng Windows PowerShell và gặp lỗi chặn thực thi file `npm.ps1` (`File ... npm.ps1 cannot be loaded because running scripts is disabled on this system`), hãy chạy câu lệnh sau để cấp quyền thực thi script cho tài khoản hiện tại:
+
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
+*(Khi được hỏi xác nhận, gõ `Y` rồi nhấn Enter. Hoặc bạn có thể chuyển sang dùng Command Prompt (CMD) / Git Bash để tránh bị kiểm tra Execution Policy).*
+
+### 🔹 2. Tiến hành cài đặt thư viện và khởi động Web UI:
 
 ```powershell
 cd apps/web
