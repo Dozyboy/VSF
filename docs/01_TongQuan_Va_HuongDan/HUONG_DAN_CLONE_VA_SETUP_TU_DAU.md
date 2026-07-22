@@ -20,7 +20,26 @@ Tránh lỗi `UnicodeDecodeError: 'charmap' codec...` khi Python đọc các fil
 ```powershell
 [System.Environment]::SetEnvironmentVariable('PYTHONUTF8', '1', 'User')
 ```
-> 💡 **Lưu ý:** Sau khi chạy câu lệnh trên, bạn tắt cửa sổ PowerShell hiện tại và mở lại cửa sổ mới (hoặc mở lại Terminal trong VS Code) để máy áp dụng cấu hình vĩnh viễn.
+
+> ⚠️ **BẮT BUỘC - KHỞI ĐỘNG LẠI IDE (VS CODE / ANTIGRAVITY):**
+> Sau khi chạy câu lệnh thiết lập biến môi trường ở trên, bạn **BẮT BUỘC PHẢI TẮT HẲN VS CODE HOẶC ANTIGRAVITY VÀ MỞ LẠI** để IDE cập nhật lại biến môi trường `PYTHONUTF8` của hệ thống.
+> 
+> 📌 **Có cần khởi động lại máy tính (Restart PC) không?** 
+> 👉 **KHÔNG CẦN RESTART MÁY!** Bạn chỉ cần đóng hoàn toàn phần mềm VS Code / Antigravity (hoặc tắt hết toàn bộ cửa sổ terminal hiện tại) rồi bật lại là phần mềm sẽ tự động nạp biến môi trường mới.
+
+### 🔹 3. Cấu hình Tên và Email Git (Nếu máy mới chưa cấu hình):
+Tránh lỗi `Author identity unknown` khi thực hiện `git commit`:
+
+```powershell
+git config --global user.name "Tên Của Bạn"
+git config --global user.email "email_cua_ban@example.com"
+```
+
+- **Cách kiểm tra lại thông tin đã được cấu hình thành công chưa:**
+  ```powershell
+  git config user.name
+  git config user.email
+  ```
 
 ---
 
@@ -88,7 +107,14 @@ Tạo file `.env` từ mẫu `.env.example`:
   curl -LsSf https://astral.sh/uv/install.sh | sh
   ```
 
-> 💡 **Lưu ý quan trọng:** Sau khi cài đặt thành công `uv`, bạn cần **tắt cửa sổ PowerShell / Terminal hiện tại và mở lại cửa sổ mới** để hệ thống nhận diện câu lệnh. Kiểm tra bằng lệnh: `uv --version`.
+> ⚠️ **BẮT BUỘC - KHỞI ĐỘNG LẠI IDE (VS CODE / ANTIGRAVITY):**
+> Sau khi cài đặt thành công `uv`, hệ thống Windows đã thêm đường dẫn của `uv` vào biến môi trường `PATH` cá nhân.
+> Bạn **BẮT BUỘC PHẢI TẮT HẲN VS CODE HOẶC ANTIGRAVITY VÀ MỞ LẠI** để Terminal trong IDE nhận diện được câu lệnh `uv`.
+> 
+> 📌 **Có cần restart máy tính không?** 
+> 👉 **KHÔNG CẦN!** Chỉ cần tắt và mở lại VS Code / Antigravity là đủ.
+> 
+> 💡 **Cách kiểm tra:** Sau khi mở lại VS Code / Antigravity, bật Terminal mới và gõ lệnh `uv --version` để xác nhận thành công.
 
 ### 🔹 2. Cài đặt đầy đủ các thư viện Python cho toàn bộ Workspace:
 
