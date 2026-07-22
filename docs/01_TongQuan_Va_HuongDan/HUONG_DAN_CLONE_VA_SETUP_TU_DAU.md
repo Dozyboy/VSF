@@ -221,13 +221,22 @@ Chạy bài test kiểm tra chất lượng toàn bộ dự án:
 
 ### 🔹 1. Khắc phục lỗi Execution Policy trên Windows PowerShell (Nếu gặp lỗi khi gõ npm):
 
-Nếu bạn sử dụng Windows PowerShell và gặp lỗi chặn thực thi file `npm.ps1` (`File ... npm.ps1 cannot be loaded because running scripts is disabled on this system`), hãy chạy câu lệnh sau để cấp quyền thực thi script cho tài khoản hiện tại:
+Nếu bạn sử dụng Windows PowerShell và gặp lỗi chặn thực thi script (`File C:\Program Files\nodejs\npm.ps1 cannot be loaded because running scripts is disabled on this system`), bạn chọn 1 trong các cách khắc phục sau:
 
-```powershell
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-```
+- **Cách 1: Cấp quyền chạy script cho tài khoản hiện tại (Khuyên dùng - cố định):**
+  Mở PowerShell và chạy câu lệnh:
+  ```powershell
+  Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+  ```
+  *(Khi hệ thống hỏi xác nhận, gõ `Y` rồi nhấn **Enter**).*
 
-*(Khi được hỏi xác nhận, gõ `Y` rồi nhấn Enter. Hoặc bạn có thể chuyển sang dùng Command Prompt (CMD) / Git Bash để tránh bị kiểm tra Execution Policy).*
+- **Cách 2: Cấp quyền tạm thời (Chỉ áp dụng trong cửa sổ Terminal hiện tại):**
+  ```powershell
+  Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process
+  ```
+
+- **Cách 3: Chuyển sang dùng Command Prompt (CMD) hoặc Git Bash:**
+  Chính sách Execution Policy chỉ áp dụng cho PowerShell. Nếu bạn mở tab Terminal dạng **Command Prompt (CMD)** hoặc **Git Bash**, bạn có thể chạy `npm install` trực tiếp mà không gặp lỗi này.
 
 ### 🔹 2. Tiến hành cài đặt thư viện và khởi động Web UI:
 
