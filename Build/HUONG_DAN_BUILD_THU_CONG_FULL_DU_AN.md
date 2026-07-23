@@ -1,63 +1,67 @@
-# 🛠️ HƯỚNG DẪN LẮP RÁP & BUILD FULL DỰ ÁN VÀO THƯ MỤC `VSF/Build`
+# 🛠️ HƯỚNG DẪN LẮP RÁP & BUILD FULL DỰ ÁN BẰNG CÂU LỆNH TERMINAL
 
-> 💡 **MẸO THÔNG MINH:** Dùng bộ `agentcore-studio-kit` làm **Bộ Khung Chuẩn**, sau đó đè code mới nhất từ các Repo thành viên vào!
-
----
-
-## 🎯 I. CÁCH LÀM TỐI ƯU NHẤT (COPY KIT LÀM BỘ KHUNG)
-
-Thay vì phải tự tạo từng thư mục `packages`, `apps` thủ công, bạn tận dụng luôn `agentcore-studio-kit` làm khung xương hoàn chỉnh:
-
-### 📌 BƯỚC 1: COPY TOÀN BỘ KIT LÀM KHUNG
-1. Copy **toàn bộ nội dung** trong thư mục `agentcore-studio-kit`.
-2. Dán trực tiếp vào thư mục `VSF/Build/`.
-   * ➔ Lúc này `VSF/Build` đã có sẵn đầy đủ khung `apps/`, `packages/`, `pyproject.toml`, `contracts`, `tests`...
+Tài liệu này hướng dẫn bạn thực hiện lắp ráp dự án **hoàn toàn bằng câu lệnh Terminal (PowerShell)** tại thư mục gốc `Today`, không cần thao tác bằng chuột.
 
 ---
 
-### 📌 BƯỚC 2: ĐÈ CODE MỚI NHẤT TỪ CÁC REPO THÀNH VIÊN VÀO KHUNG
+## 🚀 I. CÁC CÂU LỆNH COPY BẰNG POWERSHELL (CHẠY TỪ THƯ MỤC GỐC `Today`)
 
-Bây giờ bạn chỉ cần copy code mới nhất mà 4 thành viên vừa phát triển để đè (overwrite) vào khung:
+Mở Terminal (PowerShell) tại thư mục `Today` và copy/paste các lệnh sau:
 
-1. **Gói `workbench` (Code SWE của bạn - Thiệu Quang Minh):**
-   * Copy toàn bộ thư mục `agentcore-studio-workbench`
-   * Dán đè vào `VSF/Build/packages/workbench`
-
-2. **Gói `engine` (Code AIE-1 của Đạt):**
-   * Copy toàn bộ thư mục `agentcore-studio-engine`
-   * Dán đè vào `VSF/Build/packages/engine`
-
-3. **Gói `kb` (Code DE của Đông Anh):**
-   * Copy toàn bộ thư mục `agentcore-studio-kb`
-   * Dán đè vào `VSF/Build/packages/kb`
-
-4. **Gói `evalhub` (Code AIE-2 của Duy):**
-   * Copy toàn bộ thư mục `agentcore-studio-evalhub`
-   * Dán đè vào `VSF/Build/packages/evalhub`
-
-5. **Ứng dụng `web / studio` (Giao diện):**
-   * Copy toàn bộ thư mục `agentcore-studio-web`
-   * Dán đè vào `VSF/Build/apps/studio`
-
----
-
-## 🚀 II. KÍCH HOẠT VÀ LIÊN KẾT CÁC GÓI ĐỂ HẾT GẠCH ĐỎ IDE
-
-Sau khi dán đè xong, mở Terminal tại `VSF/Build` và chạy 1 dòng lệnh:
-
-```bash
-pip install -e packages/contracts -e packages/workbench -e packages/engine -e packages/kb -e packages/evalhub
+### 📌 BƯỚC 1: COPY TOÀN BỘ KIT LÀM BỘ KHUNG CHUẨN
+```powershell
+Copy-Item -Path ".\agentcore-studio-kit\*" -Destination ".\VSF\Build\" -Recurse -Force
 ```
 
 ---
 
-## ✅ III. KIỂM TRA THÀNH QUẢ (SMOKE TEST)
+### 📌 BƯỚC 2: ĐÈ (OVERWRITE) CODE MỚI NHẤT TỪ CÁC REPO RIÊNG LẺ
 
-1. Mở VS Code tại thư mục `VSF/Build`: Toàn bộ gạch đỏ biến mất 🟢.
-2. Mở Terminal tại `VSF/Build` và chạy:
-   ```bash
-   pytest
-   ```
-   Toàn bộ hệ thống Monorepo sẽ chạy test xanh từ A-Z!
+#### 1. Đè gói `workbench` (SWE — Code của bạn):
+```powershell
+Copy-Item -Path ".\agentcore-studio-workbench\*" -Destination ".\VSF\Build\packages\workbench\" -Recurse -Force
+```
 
-*Tài liệu cập nhật theo ý tưởng tối ưu của Thiệu Quang Minh (SWE)*
+#### 2. Đè gói `engine` (AIE-1 — Code của Đạt):
+```powershell
+Copy-Item -Path ".\agentcore-studio-engine\*" -Destination ".\VSF\Build\packages\engine\" -Recurse -Force
+```
+
+#### 3. Đè gói `kb` (DE — Code của Đông Anh):
+```powershell
+Copy-Item -Path ".\agentcore-studio-kb\*" -Destination ".\VSF\Build\packages\kb\" -Recurse -Force
+```
+
+#### 4. Đè gói `evalhub` (AIE-2 — Code của Duy):
+```powershell
+Copy-Item -Path ".\agentcore-studio-evalhub\*" -Destination ".\VSF\Build\packages\evalhub\" -Recurse -Force
+```
+
+#### 5. Đè ứng dụng `web` (Studio UI):
+```powershell
+Copy-Item -Path ".\agentcore-studio-web\*" -Destination ".\VSF\Build\apps\studio\" -Recurse -Force
+```
+
+---
+
+## ⚡ II. CÂU LỆNH CHẠY GỘP TOÀN BỘ TRONG 1 DÒNG (ONE-LINER)
+
+Nếu bạn muốn chạy **tất cả các bước copy trên trong 1 lần duy nhất**:
+
+```powershell
+Copy-Item -Path ".\agentcore-studio-kit\*" -Destination ".\VSF\Build\" -Recurse -Force ; Copy-Item -Path ".\agentcore-studio-workbench\*" -Destination ".\VSF\Build\packages\workbench\" -Recurse -Force ; Copy-Item -Path ".\agentcore-studio-engine\*" -Destination ".\VSF\Build\packages\engine\" -Recurse -Force ; Copy-Item -Path ".\agentcore-studio-kb\*" -Destination ".\VSF\Build\packages\kb\" -Recurse -Force ; Copy-Item -Path ".\agentcore-studio-evalhub\*" -Destination ".\VSF\Build\packages\evalhub\" -Recurse -Force ; Copy-Item -Path ".\agentcore-studio-web\*" -Destination ".\VSF\Build\apps\studio\" -Recurse -Force
+```
+
+---
+
+## 🔗 III. KÍCH HOẠT LIÊN KẾT GÓI & TEST
+
+Sau khi copy bằng câu lệnh xong, di chuyển vào `VSF/Build` và kích hoạt:
+
+```powershell
+cd .\VSF\Build\
+pip install -e packages/contracts -e packages/workbench -e packages/engine -e packages/kb -e packages/evalhub
+pytest
+```
+
+*Tài liệu tạo bởi Antigravity AI — Hỗ trợ Thiệu Quang Minh (SWE)*
