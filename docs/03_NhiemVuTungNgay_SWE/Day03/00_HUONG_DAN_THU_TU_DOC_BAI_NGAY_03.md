@@ -5,8 +5,6 @@
 ## 📌 MỤC TIÊU CỦA DAY 03 (NGÀY 3)
 Ngày 03 là ngày quan trọng nhất của Walking Skeleton: **Xâu Kim (Wiring)** lần đầu tiên cho luồng dữ liệu chạy thông từ **Form UI (SWE) ➔ Recipe (SWE) ➔ Engine Interpreter (AIE-1)**!
 
-Thư mục Day 03 chứa 9 file hướng dẫn chuyên sâu. Dưới đây là lộ trình đọc tối ưu từ tổng quan đến thực hành chi tiết.
-
 ---
 
 ## 🗺️ THỨ TỰ ĐỌC CÁC FILE CHUẨN (8 BƯỚC THÔNG SUỐT)
@@ -19,8 +17,11 @@ Thư mục Day 03 chứa 9 file hướng dẫn chuyên sâu. Dưới đây là l
                             │
                             ▼
 ┌────────────────────────────────────────────────────────┐
-│  BƯỚC 2: NẮM TỔNG QUAN ĐỀ BÀI NGÀY 3                   │
-│  📄 NHIEM_VU_CHI_TIET_NGAY_03_SWE.md                   │
+│  BƯỚC 2: NẮM CHI TIẾT NHIỆM VỤ 4 THÀNH VIÊN TRONG NHÓM │
+│  📄 NHIEM_VU_CHI_TIET_NGAY_03_SWE.md (SWE — Minh)      │
+│  📄 NHIEM_VU_CHI_TIET_NGAY_03_AIE1_TRAN_BA_DAT.md (AIE1)│
+│  📄 NHIEM_VU_CHI_TIET_NGAY_03_DE_NGUYEN_DONG_ANH.md(DE)│
+│  📄 NHIEM_VU_CHI_TIET_NGAY_03_AIE2_LUU_TIEN_DUY.md(AIE2)│
 └───────────────────────────┬────────────────────────────┘
                             │
                             ▼
@@ -64,9 +65,11 @@ Thư mục Day 03 chứa 9 file hướng dẫn chuyên sâu. Dưới đây là l
 
 ---
 
-### 📍 BƯỚC 2: TỔNG QUAN NHIỆM VỤ NGÀY 3
-* **File cần đọc**: [NHIEM_VU_CHI_TIET_NGAY_03_SWE.md](file:///c:/Users/thuym/Desktop/Today/VSF/docs/03_NhiemVuTungNgay_SWE/Day03/NHIEM_VU_CHI_TIET_NGAY_03_SWE.md)
-* **Ý nghĩa**: Nắm rõ 2 nhiệm vụ chính: Bút form tạo agent xuất `recipe.agent_config` và Wiring `recipe` sang `interpreter` entry.
+### 📍 BƯỚC 2: NẮM CHI TIẾT NHIỆM VỤ CỦA CÁC THÀNH VIÊN TRONG NHÓM
+* **SWE (Thiệu Quang Minh)**: [NHIEM_VU_CHI_TIET_NGAY_03_SWE.md](file:///c:/Users/thuym/Desktop/Today/VSF/docs/03_NhiemVuTungNgay_SWE/Day03/NHIEM_VU_CHI_TIET_NGAY_03_SWE.md) *(Bút form tạo agent & wiring Recipe sang Interpreter)*.
+* **AIE-1 (Trần Bá Đạt)**: [NHIEM_VU_CHI_TIET_NGAY_03_AIE1_TRAN_BA_DAT.md](file:///c:/Users/thuym/Desktop/Today/VSF/docs/03_NhiemVuTungNgay_SWE/Day03/NHIEM_VU_CHI_TIET_NGAY_03_AIE1_TRAN_BA_DAT.md) *(Bút Interpreter 3-node hardcode & executors)*.
+* **DE (Nguyễn Đông Anh — Issue #11)**: [NHIEM_VU_CHI_TIET_NGAY_03_DE_NGUYEN_DONG_ANH.md](file:///c:/Users/thuym/Desktop/Today/VSF/docs/03_NhiemVuTungNgay_SWE/Day03/NHIEM_VU_CHI_TIET_NGAY_03_DE_NGUYEN_DONG_ANH.md) *(Cấp `kb.search` stub signature & bắt đầu `doc-factory`)*.
+* **AIE-2 (Lưu Tiến Duy)**: [NHIEM_VU_CHI_TIET_NGAY_03_AIE2_LUU_TIEN_DUY.md](file:///c:/Users/thuym/Desktop/Today/VSF/docs/03_NhiemVuTungNgay_SWE/Day03/NHIEM_VU_CHI_TIET_NGAY_03_AIE2_LUU_TIEN_DUY.md) *(Phác `smoke-eval runner` skeleton)*.
 
 ---
 
