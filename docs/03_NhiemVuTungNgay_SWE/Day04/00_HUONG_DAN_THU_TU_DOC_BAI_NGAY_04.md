@@ -7,7 +7,7 @@ Ngày 04 nâng cấp AgentCore Studio từ **Walking Skeleton rỗng sang AI Age
 
 ---
 
-## 🗺️ THỨ TỰ ĐỌC CÁC FILE CHUẨN (5 BƯỚC THÔNG SUỐT)
+## 🗺️ THỨ TỰ ĐỌC CÁC FILE CHUẨN (6 BƯỚC THÔNG SUỐT)
 
 ```
 ┌────────────────────────────────────────────────────────┐
@@ -17,8 +17,11 @@ Ngày 04 nâng cấp AgentCore Studio từ **Walking Skeleton rỗng sang AI Age
                             │
                             ▼
 ┌────────────────────────────────────────────────────────┐
-│  BƯỚC 2: NẮM CHI TIẾT ĐỀ BÀI ISSUE #18                 │
-│  📄 NHIEM_VU_CHI_TIET_NGAY_04_SWE.md                   │
+│  BƯỚC 2: NẮM CHI TIẾT NHIỆM VỤ 4 THÀNH VIÊN TRONG NHÓM │
+│  📄 NHIEM_VU_CHI_TIET_NGAY_04_SWE.md (SWE — Minh)      │
+│  📄 NHIEM_VU_CHI_TIET_NGAY_04_AIE1_TRAN_BA_DAT.md (AIE1)│
+│  📄 NHIEM_VU_CHI_TIET_NGAY_04_DE_NGUYEN_DONG_ANH.md(DE)│
+│  📄 NHIEM_VU_CHI_TIET_NGAY_04_AIE2_LUU_TIEN_DUY.md(AIE2)│
 └───────────────────────────┬────────────────────────────┘
                             │
                             ▼
@@ -37,7 +40,7 @@ Ngày 04 nâng cấp AgentCore Studio từ **Walking Skeleton rỗng sang AI Age
 ┌────────────────────────────────────────────────────────┐
 │  BƯỚC 5: NỘP BÀI GITHUB ISSUE #18 & DAILY NOTE D4      │
 │  📄 MAU_COMMENT_GITHUB_ISSUE_DAY_04.md                 │
-└────────────────────────────────────────────────┘
+└────────────────────────────────────────────────────────┘
 ```
 
 ---
@@ -48,9 +51,19 @@ Ngày 04 nâng cấp AgentCore Studio từ **Walking Skeleton rỗng sang AI Age
 
 ---
 
-### 📍 BƯỚC 2: NẮM CHI TIẾT NỘI DUNG ISSUE #18
-* **File cần đọc**: [NHIEM_VU_CHI_TIET_NGAY_04_SWE.md](file:///c:/Users/thuym/Desktop/Today/VSF/docs/03_NhiemVuTungNgay_SWE/Day04/NHIEM_VU_CHI_TIET_NGAY_04_SWE.md)
-* **Ý nghĩa**: Bóc tách từng yêu cầu kỹ thuật của Issue #18 và 6 tiêu chuẩn hoàn thành nhiệm vụ (DoD Checklist).
+### 📍 BƯỚC 2: NẮM CHI TIẾT ĐỀ BÀI CỦA 4 THÀNH VIÊN TRONG NHÓM
+* **SWE (Thiệu Quang Minh — Issue #18)**:  
+  [NHIEM_VU_CHI_TIET_NGAY_04_SWE.md](file:///c:/Users/thuym/Desktop/Today/VSF/docs/03_NhiemVuTungNgay_SWE/Day04/NHIEM_VU_CHI_TIET_NGAY_04_SWE.md)  
+  *(Đóng gói `kb_binding.{kb_id, scope}` từ Form UI/Builder & Wiring sang Interpreter).*
+* **AIE-1 (Trần Bá Đạt — Issue #17)**:  
+  [NHIEM_VU_CHI_TIET_NGAY_04_AIE1_TRAN_BA_DAT.md](file:///c:/Users/thuym/Desktop/Today/VSF/docs/03_NhiemVuTungNgay_SWE/Day04/NHIEM_VU_CHI_TIET_NGAY_04_AIE1_TRAN_BA_DAT.md)  
+  *(Viết `kb-retrieve` executor thật gọi `kb.search` của DE, trích `chunk_id` vào citation tại node `llm-step`).*
+* **DE (Nguyễn Đông Anh — Issue #16)**:  
+  [NHIEM_VU_CHI_TIET_NGAY_04_DE_NGUYEN_DONG_ANH.md](file:///c:/Users/thuym/Desktop/Today/VSF/docs/03_NhiemVuTungNgay_SWE/Day04/NHIEM_VU_CHI_TIET_NGAY_04_DE_NGUYEN_DONG_ANH.md)  
+  *(Tạo 5 tài liệu KB Stub bằng `doc-factory`, viết API `kb.search` thô trả về `chunk_id` và tạo bộ 5 Golden Cases nhãn tay).*
+* **AIE-2 (Lưu Tiến Duy — Issue #19)**:  
+  [NHIEM_VU_CHI_TIET_NGAY_04_AIE2_LUU_TIEN_DUY.md](file:///c:/Users/thuym/Desktop/Today/VSF/docs/03_NhiemVuTungNgay_SWE/Day04/NHIEM_VU_CHI_TIET_NGAY_04_AIE2_LUU_TIEN_DUY.md)  
+  *(Bút `smoke-eval runner` 5 cases, so sánh `actual` vs `expected`, tính `scorecard v0` và in Bảng điểm 5 dòng ra CLI).*
 
 ---
 
