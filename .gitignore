@@ -1,0 +1,9 @@
+# Ignore build artifacts and output directory
+Build/
+*.log
+.venv/
+node_modules/
+dist/
+__pycache__/
+*.pyc
+.DS_Store
