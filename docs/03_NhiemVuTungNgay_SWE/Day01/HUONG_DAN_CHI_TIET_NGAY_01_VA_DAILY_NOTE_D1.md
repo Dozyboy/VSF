@@ -21,7 +21,7 @@
 2. **Trình bày bài Teach-back (Mảng Workbench / Recipe):**
    - Trình bày cho team hiểu cách người dùng tạo Agent bằng Form UI khai báo (zero code lõi) và cách Recipe đóng vai trò là "bản hợp đồng" giao tiếp giữa Form UI và Động cơ Engine.
 3. **Nghiên cứu tài liệu kiến trúc:**
-   - Đọc hiểu chi tiết Recipe Schema §3.1 (Contract #1) và Luật Fence bảo mật §1 (Phân quyền Tenant Wall & kiểm định đồ thị DAG).
+   - Đọc hiểu chi tiết Recipe Schema §3.1 (Contract số 1) và Luật Fence bảo mật §1 (Phân quyền Tenant Wall & kiểm định đồ thị DAG).
 4. **Báo cáo Daily Note D1 (`2026-07-20-Dozyboy.md`):**
    - Tạo và nộp file báo cáo chuẩn template `daily-note.md` lên repository `agentcore-report`.
 
@@ -53,7 +53,7 @@ tags: [workbench, recipe, onboarding, day1]
 - ✅ Thiết lập môi trường Python 3.14 + uv workspace cho dự án.
 
 ## Contract / integration
-- Đọc hiểu 4 Core Contracts (R-SPEC A1), chuẩn bị giữ bút Contract #1 Recipe Schema.
+- Đọc hiểu 4 Core Contracts (R-SPEC A1), chuẩn bị giữ bút Contract số 1 Recipe Schema.
 
 ## Blocker / escalate
 - Đã giải quyết các thắc mắc về phân quyền repository và khởi tạo submodule.
@@ -67,17 +67,47 @@ tags: [workbench, recipe, onboarding, day1]
 
 ---
 
-## 💬 PHẦN 3: MẪU COMMENT CHO ISSUE NGÀY 1 (NẾU CẦN DÁN LÊN GITHUB)
+---
 
-Nếu bạn cần dán comment tóm tắt lên **Issue Ngày 1 (20/07)** trên GitHub:
+## 💬 PHẦN 3: MẪU COMMENT CHI TIẾT CHO ISSUE NGÀY 1 (NẾU CẦN DÁN LÊN GITHUB)
+
+Nếu bạn cần dán comment tóm tắt chi tiết lên **Issue Ngày 1 (20/07)** trên GitHub:
 
 ```markdown
-### 📊 Báo cáo hoàn thành Nhiệm vụ Ngày 1 (SWE — Dozyboy)
+### 📊 BÁO CÁO HOÀN THÀNH NHIỆM VỤ NGÀY 1 (SWE — DOZYBOY / THIỆU QUANG MINH)
 
-- ✅ **NDA & Security**: Đã ký cam kết NDA pledge và bật `pre-commit` secret scan.
-- ✅ **Teach-back Workbench/Recipe**: Trình bày thành công nguyên lý Workbench Form ➔ Recipe khai báo (zero code lõi) và phân định ranh giới Engine vs Recipe.
-- ✅ **Nghiên cứu Spec**: Đã nghiên cứu chi tiết Recipe Schema §3.1 và Luật Fence bảo mật §1.
-- ✅ **Daily-note D1**: Đã khởi tạo và push file báo cáo `2026-07-20-Dozyboy.md`.
+---
 
-🔗 **Ref Báo cáo chi tiết:** https://github.com/AI20K-VGR/agentcore-report/blob/main/daily-notes/2026-07-20-Dozyboy.md
+#### 1. 🛡️ Bảo mật & Thiết lập Môi trường (NDA & Security Setup)
+- [x] **NDA Pledge**: Đã ký cam kết bảo mật NDA pledge, tuân thủ tuyệt đối nguyên tắc 100% dữ liệu thử nghiệm là Synthetic Data (0 PII / không dữ liệu cá nhân thật).
+- [x] **Pre-commit Secret Scan**: Đã cài đặt và kích hoạt hook `pre-commit` quét bí mật tự động trước khi commit để chặn rò rỉ API key, password lên GitHub.
+- [x] **Môi trường kỹ thuật**: Khởi tạo môi trường Python workspace với `uv`, sẵn sàng phụ trách 2 submodules `packages/workbench` và `apps/web`.
+- [x] **Kiểm thử tự động (Pytest)**: Chạy thành công bộ test khung của Mentor với kết quả **PASS 100%**.
+
+---
+
+#### 2. 🎤 Trình bày Teach-back Kiến trúc (Workbench vs. Engine)
+- [x] **Vùng trách nhiệm SWE**: Xác định ranh giới làm việc tại Backend Workbench (`packages/workbench`) và Frontend Web UI (`apps/web`).
+- [x] **Nguyên lý Zero Code lõi**: Trình bày cho team (DE, AIE-1, AIE-2) hiểu cách người dùng tạo Agent bằng Form UI / Canvas kéo-thả để sinh file `Recipe` khai báo mà **không cần sửa dòng code backend nào**.
+- [x] **Ranh giới Engine vs. Recipe**:
+  - **Engine (AIE-1)**: Bộ máy thực thi lõi backend, xây 1 lần dùng chung cho tất cả Agent.
+  - **Recipe (SWE)**: File công thức cấu hình riêng của từng Agent chứa prompt `instructions`, `model`, `tool_whitelist`, và đồ thị `dag`.
+
+---
+
+#### 3. 📖 Nghiên cứu Specs & Kiến trúc Bảo mật
+- [x] **Recipe Schema (§3.1)**: Làm chủ cấu hình Contract số 1 (SWE giữ bút), nắm rõ 6 NodeType cố định (`kb-retrieve`, `llm-step`, `condition`, `tool-call`, `hitl-pause`, `end`).
+- [x] **Luật Fence & Phân quyền (§1)**: Hiểu rõ cơ chế Tenant Wall (403 Forbidden) và nguyên tắc **Fence-tại-retrieval** (lọc quyền trực tiếp từ Vector DB / RLS thay vì nhờ AI "đừng nói" để chống Prompt Injection).
+
+---
+
+#### 4. 📝 Báo cáo Daily Note D1 & Tài liệu Tự nghiên cứu
+- [x] **File Báo cáo**: Đã tạo và push file báo cáo chuẩn template 6 block tại đường dẫn:
+  - 📁 `docs/reports/daily-notes/2026-07-20-Dozyboy.md`
+- [x] **Tự nghiên cứu & Kiến thức VSF**: Đã hệ thống hóa toàn bộ tài liệu tự tổng hợp & hướng dẫn setup tại Repository cá nhân:
+  - 📚 `https://github.com/Dozyboy/VSF`
+
+🔗 **Ref Báo cáo chi tiết:** https://github.com/AI20K-VGR/agentcore-report/blob/main/daily-notes/2026-07-20-Dozyboy.md  
+📌 **Ref Personal Knowledge Vault:** https://github.com/Dozyboy/VSF
 ```
+
