@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+# Test / type / lint caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+# Env (bí mật — không commit)
+.env
+.env.*
+# uv.lock sống ở repo cha (agentcore-studio-kit), KHÔNG ở submodule này
+# Rác macOS Finder — không nguồn nào yêu cầu, chặn ở đây để `git add -A` không lỡ tay kéo vào
+.DS_Store
