@@ -1,44 +1,18 @@
-# NHIỆM VỤ & KIẾN THỨC DAY 4 — DE (NGUYỄN ĐÔNG ANH)
+# BẢNG ĐIỀU HƯỚNG KNOWLEDGE DAY 04 — DE (NGUYỄN ĐÔNG ANH)
 
-## 📌 XONG NGÀY (DoD CHUNG CẢ NHÓM NGÀY 4)
-- [x] **Data-Threading xuyên suốt**: Dữ liệu truyền liên tục qua các node trong Interpreter.
-- [x] **Verification 5/5 PASS**: `StaticKbSearch` và Golden-set 5 cases chạy khớp 100% trên cả 2 trục (Chéo Tenant SC-04 và Chéo Vai SC-05 đều từ chối đúng).
-- [x] Chạy `python -m studio_evalhub.cli` ra kết quả **5/5 PASS**.
-- [x] `make test` và `make lint` xanh 100% workspace.
+Chào mừng bạn đến với **Day 04** thuộc vai trò **Data Engineer (DE)** trong dự án AgentCore Studio.
 
----
+## 📚 TÀI LIỆU HỌC TẬP VÀ THỰC THI NGÀY 04
+Nghiên cứu và thực hiện công việc theo 2 tài liệu chuẩn sau:
 
-## 🎯 VIỆC CỦA BẠN (DE - NGUYỄN ĐÔNG ANH - DAY 4)
-1. **Triển khai `StaticKbSearch`**: Viết `packages/kb/src/studio_kb/static_search.py` tìm kiếm trực tiếp trên 25 chunks Callisto, lọc chính xác theo `tenant_id` và `section_role`.
-2. **Xây dựng Golden-set 5 Test Cases**: Tạo file `packages/kb/golden/smoke-5.yaml` chứa 5 kịch bản thử nghiệm:
-   - SC-01: Ankor leave days (Answerable)
-   - SC-02: Borea leave days (Answerable)
-   - SC-03: Ankor expense limit (Answerable)
-   - SC-04: Cross-tenant leak attempt (Refusal - Ankor hỏi dữ liệu Borea)
-   - SC-05: Cross-role leak attempt (Refusal - User vai Engineering hỏi bảng lương HR)
-3. **Thương lượng Contract với AIE-2**: Thống nhất quy tắc so khớp đáp án (`expected` cụm ngắn) và trường `expected_section_role`.
+1. 📖 [**BAI_GIANG_CHI_TIET.md**](file:///c:/Users/thuym/Desktop/Today/VSF/docs/Knowledge/DE_NguyenDongAnh/Day04/BAI_GIANG_CHI_TIET.md): Bài giảng lý thuyết về Xây dựng Pipeline Ingest & Chunking thực tế, Cấu hình bảng PostgreSQL `kb.chunks` với hàng rào RLS 2 lớp (`tenant_id` + `section_role`), và Hệ thống Trace Sink Recorder.
+2. 🎯 [**MO_TA_NHIEM_VU.md**](file:///c:/Users/thuym/Desktop/Today/VSF/docs/Knowledge/DE_NguyenDongAnh/Day04/MO_TA_NHIEM_VU.md): Chi tiết Issue GitHub `#16`, quy trình chạy `doc-factory` nạp 5 tài liệu Callisto vào DB, kiểm tra truy vấn lọc RLS, đóng băng Hợp đồng Schema v1 và nộp Daily Note D4.
 
 ---
 
-## 🧠 KIẾN THỨC NỀN TẢNG (KNOWLEDGE & CONCEPTS)
-- **Static Search Security Verification**: Tạo một lớp truy vấn bộ nhớ tĩnh có cùng logic lọc bảo mật như DB thật để kiểm tra toàn bộ pipeline trước khi nối Postgres RLS.
-- **Cross-Role Isolation (SC-05)**: Đảm bảo kiểm tra đúng hai lớp: lớp 1 là `tenant_id` và lớp 2 là `section_role` (quyền truy cập theo vai trò công việc).
-
----
-
-## 📁 FILE CODE LIÊN QUAN
-- `packages/kb/src/studio_kb/static_search.py` (Lớp `StaticKbSearch` truy vấn 25 chunks)
-- `packages/kb/golden/smoke-5.yaml` (File 5 test cases golden set)
-- `packages/kb/tests/test_static_search.py` (Test suite cho static search)
-
----
-
-## 🔄 WORKFLOW & INTEGRATION FLOW
-```
-[KbRetrieveExecutor] ──> [StaticKbSearch.search(query, tenant, section_roles)]
-                                  │
-                       ┌──────────┴──────────┐
-                  (Match Role)        (Mismatch Role)
-                       ▼                     ▼
-               [Return Chunks]        [Return Empty []] ──> [Trigger Refusal]
-```
+## 📌 TÓM TẮT MỤC TIÊU DoD NGÀY 04
+- [x] Chạy `doc-factory` nạp thành công 5 tài liệu Callisto cho 2 tenant `ankor` & `borea`.
+- [x] Thiết lập bảng `kb.chunks` trên Postgres có kích hoạt RLS `FORCE ROW LEVEL SECURITY`.
+- [x] Hoàn thiện hàm `kb.search` đọc dữ liệu thật từ DB lọc theo tenant & section role.
+- [x] Đóng băng Hợp đồng Schema Contract #2 & #3 chuyển sang phiên bản v1 (Frozen).
+- [x] Nộp Daily Note D4.

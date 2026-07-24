@@ -1,39 +1,19 @@
-# NHIỆM VỤ & KIẾN THỨC DAY 2 — AIE-1 (TRẦN BÁ ĐẠT)
+# BẢNG ĐIỀU HƯỚNG KNOWLEDGE DAY 02 — AIE-1 (TRẦN BÁ ĐẠT)
 
-## 📌 XONG NGÀY (DoD CHUNG CẢ NHÓM NGÀY 2)
-- [x] **Clarification First**: Đặt tối thiểu 3 câu hỏi chất lượng gửi Mentor.
-- [x] Khai báo xong bộ khung (scaffold) và các hàm Stub của 4 package.
-- [x] Xuất bản file `docs/DESCOPE.md` cá nhân.
+Chào mừng bạn đến với **Day 02** thuộc vai trò **AI Engineer 1 (AIE-1)** trong dự án AgentCore Studio.
+
+## 📚 TÀI LIỆU HỌC TẬP VÀ THỰC THI NGÀY 02
+Nghiên cứu và thực hiện công việc theo 2 tài liệu chuẩn sau:
+
+1. 📖 [**BAI_GIANG_CHI_TIET.md**](file:///c:/Users/thuym/Desktop/Today/VSF/docs/Knowledge/AIE1_TranBaDat/Day02/BAI_GIANG_CHI_TIET.md): Bài giảng lý thuyết về Phác thảo Interpreter Execution Loop, Định dạng VCR-Style Fixtures cho LLM Step, Thiết kế hàm Dispatcher `execute(node, ctx) -> ctx'`, và Thang hạ cấp `DESCOPE.md`.
+2. 🎯 [**MO_TA_NHIEM_VU.md**](file:///c:/Users/thuym/Desktop/Today/VSF/docs/Knowledge/AIE1_TranBaDat/Day02/MO_TA_NHIEM_VU.md): Chi tiết Issue GitHub `#10`, các bước scaffold `packages/engine`, định nghĩa định dạng VCR fixtures, nộp bộ câu hỏi `question-batch` và mẫu comment GitHub Issue.
+
+---
+
+## 📌 TÓM TẮT MỤC TIÊU DoD NGÀY 02
+- [x] Đặt tối thiểu 3 câu hỏi chất lượng gửi Mentor (`question-batch`) trước khi gõ code.
+- [x] Khai báo cấu trúc scaffold package `packages/engine`.
+- [x] Phác thảo bộ khung vòng lặp execution loop của Interpreter.
+- [x] Thiết lập định dạng VCR-Style Fixtures cho node `llm-step`.
+- [x] Xuất bản file `docs/DESCOPE.md` cá nhân đề xuất 4 nấc cắt giảm.
 - [x] Lệnh `make lint` xanh 100%.
-
----
-
-## 🎯 VIỆC CỦA BẠN (AIE-1 - TRẦN BÁ ĐẠT - DAY 2)
-1. **Scaffold Package `studio_engine`**: Khởi tạo cấu trúc dự án `packages/engine`.
-2. **Thiết kế VCR-Style Fixture Format**: Quy định định dạng file fixture mô phỏng câu trả lời LLM cho node `llm-step` (giúp chạy test không tốn API key).
-3. **Khai báo Stubs**:
-   - `interpreter.py` -> `run(recipe, *, trace_writer)`
-   - `executors.py` -> Khai báo 6 executor classes tương ứng 6 NodeType.
-   - `registry.py` -> Registry khóa đúng 6 `NodeType` hợp lệ.
-4. **Xây dựng `docs/DESCOPE-AIE-1.md`**: Đề xuất kế hoạch cắt giảm mảng Engine.
-
----
-
-## 🧠 KIẾN THỨC NỀN TẢNG (KNOWLEDGE & CONCEPTS)
-- **VCR-Style Mocking Pattern**: Ghi lại câu trả lời mẫu của LLM vào file JSON/YAML fixture và phát lại khi chạy test tự động, giúp test nhanh, tất định và không mất chi phí LLM.
-- **Node Executor Registry**: Pattern đăng ký và ánh xạ từ tên loại Node (`NodeType`) sang lớp Executor tương ứng.
-
----
-
-## 📁 FILE CODE LIÊN QUAN
-- `packages/engine/src/studio_engine/interpreter.py` (Stub `run`)
-- `packages/engine/src/studio_engine/executors.py` (Stubs cho 6 node executors)
-- `packages/engine/src/studio_engine/registry.py` (Registry map 6 node types)
-- `packages/engine/docs/DESCOPE-AIE-1.md` (Kế hoạch descope)
-
----
-
-## 🔄 WORKFLOW & INTEGRATION FLOW
-```
-[Node Name] ──> [registry.get_executor(node_type)] ──> [Executor Instance] ──> [execute(node, state)]
-```

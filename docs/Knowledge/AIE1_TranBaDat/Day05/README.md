@@ -1,40 +1,18 @@
-# NHIỆM VỤ & KIẾN THỨC DAY 5 — AIE-1 (TRẦN BÁ ĐẠT)
+# BẢNG ĐIỀU HƯỚNG KNOWLEDGE DAY 05 — AIE-1 (TRẦN BÁ ĐẠT)
 
-## 📌 XONG NGÀY (DoD CHUNG CẢ NHÓM NGÀY 5)
-- [ ] **Tích hợp toàn diện qua Composition Root**: Nối 4 mảng qua `apps/studio`.
-- [ ] **Bật PostgreSQL RLS thật**: `kb.chunks` kích hoạt `FORCE ROW LEVEL SECURITY`.
-- [ ] **Hoàn thiện 8-Step Lifecycle Demo**: Chạy mượt mà từ Form -> Canvas -> Trace timeline -> Eval gate -> Publish/Rollback.
-- [ ] **Zero Leakage**: `make leak-test` xanh tuyệt đối.
+Chào mừng bạn đến với **Day 05** thuộc vai trò **AI Engineer 1 (AIE-1)** trong dự án AgentCore Studio.
 
----
+## 📚 TÀI LIỆU HỌC TẬP VÀ THỰC THI NGÀY 05
+Nghiên cứu và thực hiện công việc theo 2 tài liệu chuẩn sau:
 
-## 🎯 VIỆC CỦA BẠN (AIE-1 - TRẦN BÁ ĐẠT - DAY 5)
-1. **Triển khai Node Executor `hitl-pause`**:
-   - Viết executor cho node `hitl-pause` có khả năng tạm dừng (suspend) phiên thực thi và lưu lại checkpoint.
-   - Hỗ trợ khôi phục (resume) khi nhận được tín hiệu phê duyệt từ con người qua API/UI.
-2. **Nối Gemini LLM Provider Thật**: Thay thế VCR Fixture bằng `GeminiProvider` thật trong `apps/studio/providers`.
-3. **Phát ra các Trace Event Đầy Đủ**: Đảm bảo mỗi bước chạy của Executor phát ra đối tượng `TraceEvent` có đầy đủ 12 cột thông tin gửi cho `PgTraceWriter`.
+1. 📖 [**BAI_GIANG_CHI_TIET.md**](file:///c:/Users/thuym/Desktop/Today/VSF/docs/Knowledge/AIE1_TranBaDat/Day05/BAI_GIANG_CHI_TIET.md): Bài giảng lý thuyết về Cơ chế HITL (Human-in-the-Loop) Pause & Resume Node, Checkpoint State Machine, Streaming Trace Timeline, và Kiểm thử toàn diện Engine trước Sprint 1 Demo.
+2. 🎯 [**MO_TA_NHIEM_VU.md**](file:///c:/Users/thuym/Desktop/Today/VSF/docs/Knowledge/AIE1_TranBaDat/Day05/MO_TA_NHIEM_VU.md): Chi tiết Issue GitHub `#21`, cài đặt máy trạng thái pause/resume cho node `hitl-pause`, kiểm thử serialization checkpoint và nộp Daily Note D5.
 
 ---
 
-## 🧠 KIẾN THỨC NỀN TẢNG (KNOWLEDGE & CONCEPTS)
-- **Human-In-The-Loop (HITL) Execution State**: Mẫu thiết kế cho phép tạm dừng luồng chạy của AI Agent tại một node chỉ định, chờ duyệt từ người dùng rồi mới tiếp tục nhánh thực thi.
-- **Real LLM Provider Integration**: Quản lý API Key, rate limit và xử lý ngoại lệ khi giao tiếp với Gemini API.
-
----
-
-## 📁 FILE CODE LIÊN QUAN
-- `packages/engine/src/studio_engine/executors.py` (Thêm `HitlPauseExecutor`)
-- `apps/studio/providers/gemini.py` (Lớp `GeminiProvider` giao tiếp API thật)
-- `packages/engine/tests/test_hitl_pause.py` (Test suite kiểm tra suspend/resume)
-
----
-
-## 🔄 WORKFLOW & INTEGRATION FLOW
-```
-[Interpreter] ──> [hitl-pause Node] ──> [Suspend Run & Return Checkpoint]
-                                                      │
-                                           (Human Approves via UI)
-                                                      ▼
-[Resume Run] <── [Call interpreter.resume()] <────────┘
-```
+## 📌 TÓM TẮT MỤC TIÊU DoD NGÀY 05
+- [x] Cài đặt hoàn thiện cơ chế **HITL-Pause**: Khi gặp node `hitl-pause`, Engine dừng luồng và chuyển status sang `PAUSED`.
+- [x] Cài đặt cơ chế **Resume Execution**: Nhận signal phê duyệt từ người dùng và tiếp tục chạy từ Checkpoint node.
+- [x] Đảm bảo 100% Trace Event được stream chính xác tới Trace Sink của DE.
+- [x] Phối hợp chạy 30 Golden Cases trong bài kiểm thử Eval-Gate của AIE-2.
+- [x] Nộp Daily Note D5 (`2026-07-24-TranBaDat2607.md`).

@@ -1,32 +1,18 @@
-# NHIỆM VỤ & KIẾN THỨC DAY 3 — AIE-2 (LƯU TIẾN DUY)
+# BẢNG ĐIỀU HƯỚNG KNOWLEDGE DAY 03 — AIE-2 (LƯU TIẾN DUY)
 
-## 📌 XONG NGÀY (DoD CHUNG CẢ NHÓM NGÀY 3)
-- [x] **Walking Skeleton 3-Node**: Chạy thông suốt từ Form UI ➔ Recipe ➔ Interpreter entry.
-- [x] **Đảm bảo ranh giới DIP**: 100% thành viên chỉ import `studio_contracts`.
-- [x] **Dữ liệu mẫu & CLI Demo**: Có sẵn dữ liệu Callisto thật và chạy được CLI demo.
+Chào mừng bạn đến với **Day 03** thuộc vai trò **AI Engineer 2 (AIE-2)** trong dự án AgentCore Studio.
 
----
+## 📚 TÀI LIỆU HỌC TẬP VÀ THỰC THI NGÀY 03
+Nghiên cứu và thực hiện công việc theo 2 tài liệu chuẩn sau:
 
-## 🎯 VIỆC CỦA BẠN (AIE-2 - LƯU TIẾN DUY - DAY 3)
-1. **Dựng Bộ Chấm Điểm Thô (Smoke Eval Harness)**: Triển khai lớp `_DemoRunner` và runner 5 cases tại `packages/evalhub/src/studio_evalhub/cli.py`.
-2. **So Khớp Kết Quả Cơ Bản**: So sánh câu trả lời `actual` và `expected` bằng giải thuật khớp chuỗi cơ bản.
-3. **Hiển Thị Bảng Điểm CLI**: In bảng kết quả 5 dòng trực quan ra màn hình terminal.
+1. 📖 [**BAI_GIANG_CHI_TIET.md**](file:///c:/Users/thuym/Desktop/Today/VSF/docs/Knowledge/AIE2_LuuTienDuy/Day03/BAI_GIANG_CHI_TIET.md): Bài giảng lý thuyết về Xây dựng Bộ khung Smoke-Eval Runner, Chấm điểm trên 5 Smoke Test Cases, Thuật toán so sánh Exact Match & Citation Check.
+2. 🎯 [**MO_TA_NHIEM_VU.md**](file:///c:/Users/thuym/Desktop/Today/VSF/docs/Knowledge/AIE2_LuuTienDuy/Day03/MO_TA_NHIEM_VU.md): Chi tiết Issue GitHub `#14`, các bước xây dựng Smoke-eval runner trong `studio_evalhub`, sẵn sàng chấm điểm output của Interpreter ở Day 3, mở PR bài Teach-back và nộp Daily Note D3.
 
 ---
 
-## 🧠 KIẾN THỨC NỀN TẢNG (KNOWLEDGE & CONCEPTS)
-- **Early Verification via CLI**: Tạo công cụ CLI nhỏ giúp kiểm tra nhanh kết quả đánh giá ở tầng thấp trước khi tích hợp vào giao diện Web UI hoặc pipeline tự động.
-- **Test Case Ground Truth**: Cách xây dựng tập mẫu cặp `(query, expected_answer, expected_citation)` để làm thước đo kiểm tra.
-
----
-
-## 📁 FILE CODE LIÊN QUAN
-- `packages/evalhub/src/studio_evalhub/cli.py` (CLI Smoke Eval runner)
-- `packages/evalhub/src/studio_evalhub/harness.py` (Cập nhật logic harness thô)
-
----
-
-## 🔄 WORKFLOW & INTEGRATION FLOW
-1. CLI `python -m studio_evalhub.cli` đọc 5 case mẫu.
-2. `_DemoRunner` chạy qua từng case.
-3. In bảng kết quả 5 dòng (Success / Citation status) ra console.
+## 📌 TÓM TẮT MỤC TIÊU DoD NGÀY 03
+- [x] Xây dựng bộ khung Smoke-Eval Runner đọc 5 câu test từ `smoke-cases.json`.
+- [x] Tính toán được chỉ số `overall_score` và đưa ra `pass_gate` boolean verdict.
+- [x] Sẵn sàng nhận câu trả lời từ Interpreter của AIE-1 để thực thi chấm điểm.
+- [x] Mở Pull Request bài Teach-back Day 1 cho SWE review.
+- [x] Nộp Daily Note D3 (`2026-07-22-dholmes.md`).

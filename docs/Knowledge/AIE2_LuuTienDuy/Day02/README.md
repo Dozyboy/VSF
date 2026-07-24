@@ -1,38 +1,19 @@
-# NHIỆM VỤ & KIẾN THỨC DAY 2 — AIE-2 (LƯU TIẾN DUY)
+# BẢNG ĐIỀU HƯỚNG KNOWLEDGE DAY 02 — AIE-2 (LƯU TIẾN DUY)
 
-## 📌 XONG NGÀY (DoD CHUNG CẢ NHÓM NGÀY 2)
-- [x] **Clarification First**: Đặt tối thiểu 3 câu hỏi chất lượng gửi Mentor.
-- [x] Khai báo xong bộ khung (scaffold) và các hàm Stub của 4 package.
-- [x] Xuất bản file `docs/DESCOPE.md` cá nhân.
+Chào mừng bạn đến với **Day 02** thuộc vai trò **AI Engineer 2 (AIE-2)** trong dự án AgentCore Studio.
+
+## 📚 TÀI LIỆU HỌC TẬP VÀ THỰC THI NGÀY 02
+Nghiên cứu và thực hiện công việc theo 2 tài liệu chuẩn sau:
+
+1. 📖 [**BAI_GIANG_CHI_TIET.md**](file:///c:/Users/thuym/Desktop/Today/VSF/docs/Knowledge/AIE2_LuuTienDuy/Day02/BAI_GIANG_CHI_TIET.md): Bài giảng lý thuyết về Hợp đồng Schema Contract #4 (`scorecard`), Phác thảo 5 Smoke Test Cases cùng DE, LLM-as-a-Judge vs. Exact Match, và Thang hạ cấp `DESCOPE.md`.
+2. 🎯 [**MO_TA_NHIEM_VU.md**](file:///c:/Users/thuym/Desktop/Today/VSF/docs/Knowledge/AIE2_LuuTienDuy/Day02/MO_TA_NHIEM_VU.md): Chi tiết Issue GitHub `#7`, các bước soạn thảo `scorecard.v0.md`, scaffold package `packages/evalhub`, nộp bộ câu hỏi `question-batch` và mẫu comment GitHub Issue.
+
+---
+
+## 📌 TÓM TẮT MỤC TIÊU DoD NGÀY 02
+- [x] Đặt tối thiểu 3 câu hỏi chất lượng gửi Mentor (`question-batch`) trước khi gõ code.
+- [x] Khai báo bộ khung scaffold package `packages/evalhub`.
+- [x] Soạn thảo dự thảo Hợp đồng `scorecard.v0.md`.
+- [x] Phác thảo cấu trúc 5 câu test mẫu (Smoke-cases) cùng DE.
+- [x] Xuất bản file `docs/DESCOPE.md` cá nhân đề xuất 4 nấc cắt giảm.
 - [x] Lệnh `make lint` xanh 100%.
-
----
-
-## 🎯 VIỆC CỦA BẠN (AIE-2 - LƯU TIẾN DUY - DAY 2)
-1. **Giữ bút Contract #4 v0**: Thiết kế cấu trúc `Scorecard` format v0 trong `docs/scorecard-v0.md`.
-2. **Khai báo Stubs**:
-   - `harness.py` -> `EvalHarness.run(recipe)`
-   - `judge.py` -> `LLMJudge.evaluate(actual, expected)`
-   - `compute.py` -> `compute_scorecard(results)`
-3. **Xây dựng `docs/DESCOPE-AIE-2.md`**: Đề xuất kế hoạch cắt giảm mảng Evalhub.
-
----
-
-## 🧠 KIẾN THỨC NỀN TẢNG (KNOWLEDGE & CONCEPTS)
-- **Scorecard Contract Format**: Định dạng cấu hình bảng điểm thống nhất bao gồm các chỉ số: `accuracy`, `citation_precision`, `refusal_correctness`, `token_cost`, và kết quả tổng thể `verdict` (`PASS` / `FAIL`).
-- **Pass/Fail Threshold Gate**: Quy định mức điểm tối thiểu (ví dụ: precision >= 90%, 0 leakage) để một Agent được phép vượt qua cổng phát hành.
-
----
-
-## 📁 FILE CODE LIÊN QUAN
-- `packages/evalhub/docs/scorecard-v0.md` (Contract #4 v0)
-- `packages/evalhub/src/studio_evalhub/harness.py` (Stub `EvalHarness`)
-- `packages/evalhub/src/studio_evalhub/judge.py` (Stub `LLMJudge`)
-- `packages/evalhub/src/studio_evalhub/compute.py` (Stub `compute_scorecard`)
-
----
-
-## 🔄 WORKFLOW & INTEGRATION FLOW
-```
-[Agent Output] ──> [LLMJudge.evaluate()] ──> [CaseResult] ──> [compute_scorecard()] ──> [Scorecard Verdict]
-```

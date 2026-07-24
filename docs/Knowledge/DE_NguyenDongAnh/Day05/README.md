@@ -1,42 +1,18 @@
-# NHIỆM VỤ & KIẾN THỨC DAY 5 — DE (NGUYỄN ĐÔNG ANH)
+# BẢNG ĐIỀU HƯỚNG KNOWLEDGE DAY 05 — DE (NGUYỄN ĐÔNG ANH)
 
-## 📌 XONG NGÀY (DoD CHUNG CẢ NHÓM NGÀY 5)
-- [ ] **Tích hợp toàn diện qua Composition Root**: Nối 4 mảng qua `apps/studio`.
-- [ ] **Bật PostgreSQL RLS thật**: `kb.chunks` kích hoạt `FORCE ROW LEVEL SECURITY`.
-- [ ] **Hoàn thiện 8-Step Lifecycle Demo**: Chạy mượt mà từ Form -> Canvas -> Trace timeline -> Eval gate -> Publish/Rollback.
-- [ ] **Zero Leakage**: `make leak-test` xanh tuyệt đối (`leakage = 0`).
+Chào mừng bạn đến với **Day 05** thuộc vai trò **Data Engineer (DE)** trong dự án AgentCore Studio.
 
----
+## 📚 TÀI LIỆU HỌC TẬP VÀ THỰC THI NGÀY 05
+Nghiên cứu và thực hiện công việc theo 2 tài liệu chuẩn sau:
 
-## 🎯 VIỆC CỦA BẠN (DE - NGUYỄN ĐÔNG ANH - DAY 5)
-1. **Hoàn thiện `KbSearchService` PostgreSQL RLS thật**:
-   - Viết hàm `search()` thật trong `packages/kb/src/studio_kb/search.py`.
-   - Kết nối DB qua `psycopg` pool, tự động thiết lập `SET LOCAL app.tenant_id = 'X'` trong transaction.
-2. **Kích hoạt Trace Sink (`PgTraceWriter`)**:
-   - Ghi nhận 12 thuộc tính `TraceEvent` từ Engine trực tiếp vào bảng `obs.trace_events`.
-   - Đảm bảo tính nhất quán chi phí token (`obs.costs`).
-3. **Triển khai Consent Purge**: Viết hàm xoá sạch dữ liệu tenant theo yêu cầu (GDPR/Consent Purge).
+1. 📖 [**BAI_GIANG_CHI_TIET.md**](file:///c:/Users/thuym/Desktop/Today/VSF/docs/Knowledge/DE_NguyenDongAnh/Day05/BAI_GIANG_CHI_TIET.md): Bài giảng lý thuyết về Kiểm định Hàng rào Bảo mật Fence-Proof Validation (`leakage = 0`), Kiểm tra Tính chính xác Chi phí Trace Event (`cost_usd`), và Chuẩn bị tài nguyên cho buổi Demo / Retro Sprint 1.
+2. 🎯 [**MO_TA_NHIEM_VU.md**](file:///c:/Users/thuym/Desktop/Today/VSF/docs/Knowledge/DE_NguyenDongAnh/Day05/MO_TA_NHIEM_VU.md): Chi tiết Issue GitHub `#20`, chạy suite kiểm thử rò rỉ dữ liệu chéo tenant dưới các kịch bản Prompt Injection, tổng hợp bảng tính chi phí Token, và nộp Daily Note D5.
 
 ---
 
-## 🧠 KIẾN THỨC NỀN TẢNG (KNOWLEDGE & CONCEPTS)
-- **Transaction-Scoped RLS (`SET LOCAL`)**: Việc sử dụng `SET LOCAL` đảm bảo tham số `app.tenant_id` tự động reset ngay khi transaction kết thúc, không bị rò rỉ sang kết nối khác trong connection pool.
-- **Fail-Closed Postgres Policies**: Thiết lập policy Postgres đảm bảo bất kỳ truy vấn nào thiếu `tenant_id` sẽ nhận về 0 kết quả thay vì trả về toàn bộ DB.
-- **OTel Trace Sink Integration**: Cơ chế ghi nhận log sự kiện không đồng bộ giúp đo lường latency, token cost và node execution timeline.
-
----
-
-## 📁 FILE CODE LIÊN QUAN
-- `packages/kb/src/studio_kb/search.py` (Hàm `KbSearchService.search` thật)
-- `packages/kb/src/studio_kb/pipeline.py` (Pipeline nạp và cắt chunk tài liệu)
-- `packages/kb/src/studio_kb/schema.py` (DDL tạo bảng `kb.chunks` & RLS policy)
-- `apps/studio/obs/trace_writer.py` (Lớp `PgTraceWriter` ghi trace event)
-
----
-
-## 🔄 WORKFLOW & INTEGRATION FLOW
-```
-[Engine Node Execution] ──> [PgTraceWriter.write(event)] ──> [INSERT INTO obs.trace_events]
-                                                                        │
-[KbRetrieve Node] ──> [KbSearchService.search()] ──> [SET LOCAL app.tenant_id] ──> [Query Postgres RLS]
-```
+## 📌 TÓM TẮT MỤC TIÊU DoD NGÀY 05
+- [x] Đạt chỉ số **Fence-Proof Security**: `leakage_rate = 0.0%` tuyệt đối trên 100 truy vấn ngẫu nhiên.
+- [x] Xác minh bảng Trace Sink ghi lại chính xác 100% số lượng token và `cost_usd`.
+- [x] Phối hợp với AIE-2 trong bài kiểm thử Eval-Gate trên 30 Golden Cases.
+- [x] Tham gia buổi Demo & Retrospective Tuần 1 / Sprint 1 với Mentor.
+- [x] Nộp Daily Note D5.

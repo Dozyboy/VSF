@@ -1,33 +1,18 @@
-# NHIỆM VỤ & KIẾN THỨC DAY 3 — AIE-1 (TRẦN BÁ ĐẠT)
+# BẢNG ĐIỀU HƯỚNG KNOWLEDGE DAY 03 — AIE-1 (TRẦN BÁ ĐẠT)
 
-## 📌 XONG NGÀY (DoD CHUNG CẢ NHÓM NGÀY 3)
-- [x] **Walking Skeleton 3-Node**: Chạy thông suốt từ Form UI ➔ Recipe ➔ Interpreter entry.
-- [x] **Đảm bảo ranh giới DIP**: 100% thành viên chỉ import `studio_contracts`.
-- [x] **Dữ liệu mẫu & CLI Demo**: Có sẵn dữ liệu Callisto thật và chạy được CLI demo.
+Chào mừng bạn đến với **Day 03** thuộc vai trò **AI Engineer 1 (AIE-1)** trong dự án AgentCore Studio.
 
----
+## 📚 TÀI LIỆU HỌC TẬP VÀ THỰC THI NGÀY 03
+Nghiên cứu và thực hiện công việc theo 2 tài liệu chuẩn sau:
 
-## 🎯 VIỆC CỦA BẠN (AIE-1 - TRẦN BÁ ĐẠT - DAY 3)
-1. **Triển khai Interpreter Loop Đơn Giản**: Duyệt danh sách các node trong Recipe theo trình tự và gọi executor tương ứng.
-2. **Nối Dependency Injection**: Nhận các collaborator stubs (`kb_search`, `llm`, `embedding`, `trace_writer`) qua keyword-only arguments của `interpreter.run()`.
-3. **Viết CLI Demo Day 3**: Tạo file `packages/engine/src/studio_engine/__main__.py` chạy mô phỏng 1 Recipe 3 node (`kb-retrieve -> llm-step -> tool-call -> end`).
+1. 📖 [**BAI_GIANG_CHI_TIET.md**](file:///c:/Users/thuym/Desktop/Today/VSF/docs/Knowledge/AIE1_TranBaDat/Day03/BAI_GIANG_CHI_TIET.md): Bài giảng lý thuyết về Xây dựng Interpreter Runner 3-Node DAG, Tích hợp stub `kb.search` từ DE, và Đọc VCR Fixtures cho `llm-step`.
+2. 🎯 [**MO_TA_NHIEM_VU.md**](file:///c:/Users/thuym/Desktop/Today/VSF/docs/Knowledge/AIE1_TranBaDat/Day03/MO_TA_NHIEM_VU.md): Chi tiết Issue GitHub `#13`, từng bước viết Interpreter runner chạy 3 node, test luồng xâu kim từ SWE sang DE, mở Pull Request Day 1 và nộp Daily Note D3.
 
 ---
 
-## 🧠 KIẾN THỨC NỀN TẢNG (KNOWLEDGE & CONCEPTS)
-- **Runtime Dependency Injection (DI)**: Không khởi tạo trực tiếp DB/API client bên trong Engine mà tiêm các giao diện Protocol từ bên ngoài vào, giúp Engine hoàn toàn độc lập và dễ dàng viết Unit Test.
-- **State Propagation in DAG**: Lưu kết quả trả về của mỗi node vào `state[node_id]` để các node tiếp theo có thể tham chiếu dữ liệu.
-
----
-
-## 📁 FILE CODE LIÊN QUAN
-- `packages/engine/src/studio_engine/interpreter.py` (Vòng lặp `run()` hoàn thiện cơ bản)
-- `packages/engine/src/studio_engine/__main__.py` (CLI Demo chạy 3 node)
-- `packages/engine/tests/test_interpreter_behavior.py` (Test kiểm tra hành vi interpreter)
-
----
-
-## 🔄 WORKFLOW & INTEGRATION FLOW
-1. CLI khởi tạo Recipe 3 node.
-2. Gọi `interpreter.run(recipe, kb_search=..., llm=...)`.
-3. In kết quả cuối cùng và nhật ký thực thi ra terminal.
+## 📌 TÓM TẮT MỤC TIÊU DoD NGÀY 03
+- [x] Viết thành công Interpreter runner chạy duyệt 3-Node DAG (`kb-retrieve` -> `llm-step` -> `end`).
+- [x] Gọi thành công stub signature `kb.search` do DE (`DongAnh2704`) khai báo.
+- [x] Thực thi node `llm-step` đọc câu trả lời từ file VCR Fixture JSON.
+- [x] Mở Pull Request bài Teach-back Day 1 cho SWE review.
+- [x] Nộp Daily Note D3 (`2026-07-22-TranBaDat.md`).
