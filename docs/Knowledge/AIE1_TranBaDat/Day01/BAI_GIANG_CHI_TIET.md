@@ -14,7 +14,7 @@
 - Engine **không tự lưu state** của Agent trong bộ nhớ RAM toàn cục giữa các lệnh gọi.
 - Mỗi bước thực thi nhận vào một **Execution Context (`ctx`)** và trả về một **Context sửa đổi (`ctx'`)**:
 
-$$\text{execute}(node, ctx) \longrightarrow ctx'$$
+$$\text{execute}(node, \text{ctx}) \longrightarrow \text{ctx}'$$
 
 ```mermaid
 graph LR

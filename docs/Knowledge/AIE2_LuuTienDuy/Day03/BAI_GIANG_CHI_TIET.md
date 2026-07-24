@@ -57,6 +57,6 @@ class SmokeEvalRunner:
 
 Độ chính xác trích dẫn (Citation Accuracy) đo lường xem Agent có trích dẫn đúng đoạn `chunk_id` chứa câu trả lời hay không:
 
-$$\text{Citation Accuracy} = \begin{cases} 1.0 & \text{nếu } \text{expected\_chunk\_id} \in \text{retrieved\_chunks} \\ 0.0 & \text{nếu trích dẫn sai hoặc không có trích dẫn} \end{cases}$$
+$$\text{Citation Accuracy} = \begin{cases} 1.0 & \text{nếu } \text{expected}_{\text{chunk}}_{\text{id}} \in \text{retrieved}_{\text{chunks}} \\ 0.0 & \text{nếu trích dẫn sai hoặc không có trích dẫn} \end{cases}$$
 
 Việc kiểm tra này giúp ngăn chặn ảo giác (hallucination), đảm bảo Agent chỉ đưa ra câu trả lời khi có bằng chứng tri thức Callisto xác thực.

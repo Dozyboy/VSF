@@ -61,7 +61,7 @@ Nếu mỗi lần chạy lại pipeline bạn tạo `chunk_id = uuid4()`, thì:
 
 ### Quy tắc Deterministic Chunk ID:
 Mọi `chunk_id` phải tuân theo công thức suy nhất:
-$$\text{chunk\_id} = \text{doc\_id} + \text{"\#c"} + \text{index}$$
+$$\text{chunk}_{\text{id}} = \text{doc}_{\text{id}} + \text{"}\#\text{c"} + \text{index}$$
 Ví dụ: `ankor-hr-policy-v1#c0`, `ankor-hr-policy-v1#c1`.
 
 ---

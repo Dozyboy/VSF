@@ -50,7 +50,7 @@ Trong hệ thống AgentCore Studio:
 Tại Bài giảng Ngày 1, chúng ta đã học về **6 Lớp Bảo vệ (Defense-in-Depth)**. Lớp 1 chính là **Tenant Wall**:
 * **Rủi ro lớn nhất trong hệ thống AI Agent doanh nghiệp**: Thất thoát dữ liệu chéo giữa các Tenant (Cross-tenant data leak). Nếu Tenant A gửi câu hỏi mà Engine lại đi tra cứu trong KB của Tenant B, đó là vi phạm bảo mật nghiêm trọng!
 * **Giải pháp ở Ngày 4**: SWE đưa `scope` và `kb_id` vào trực tiếp cấu trúc `kb_binding`. Khi Node `kb-retrieve` trong Recipe kích hoạt, `tenant_wall.py` sẽ kiểm tra chéo:
-  $$\text{CheckPass} = (\text{Recipe.tenant} == \text{KbBinding.scope}) \lor (\text{KbBinding.scope} == \text{"public"})$$
+  $$\text{CheckPass} = (\text{Recipe.tenant} = \text{KbBinding.scope}) \lor (\text{KbBinding.scope} = \text{"public"})$$
 
 ---
 
