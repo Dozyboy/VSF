@@ -44,29 +44,12 @@ graph TD
 ---
 
 ## 4. CẤU TRÚC THƯ MỤC THƯ VIỆN KNOWLEDGE (DAY DẠNG THƯ MỤC)
-Mỗi ngày của từng thành viên đã được đưa vào một **Thư mục (Directory) riêng** (`Day01/`, `Day02/`, `Day03/`, `Day04/`, `Day05/`) chứa file `README.md` và sẵn sàng mở rộng thêm tài liệu/code mẫu cho từng ngày:
+> 🧭 **HƯỚNG DẪN THỨ TỰ ĐỌC TÀI LIỆU**: Xin vui lòng tham khảo file [**HUONG_DAN_DOC_TAI_LIEU.md**](file:///c:/Users/thuym/Desktop/Today/VSF/docs/Knowledge/HUONG_DAN_DOC_TAI_LIEU.md) để biết lộ trình đọc chi tiết từng ngày và thứ tự các bạn thành viên giúp hiểu toàn bộ hệ thống một cách hiệu quả nhất!
 
-- `SWE_ThieuQuangMinh/`
-  - `Day01/README.md`
-  - `Day02/README.md`
-  - `Day03/README.md`
-  - `Day04/README.md`
-  - `Day05/README.md`
-- `DE_NguyenDongAnh/`
-  - `Day01/README.md`
-  - `Day02/README.md`
-  - `Day03/README.md`
-  - `Day04/README.md`
-  - `Day05/README.md`
-- `AIE1_TranBaDat/`
-  - `Day01/README.md`
-  - `Day02/README.md`
-  - `Day03/README.md`
-  - `Day04/README.md`
-  - `Day05/README.md`
-- `AIE2_LuuTienDuy/`
-  - `Day01/README.md`
-  - `Day02/README.md`
-  - `Day03/README.md`
-  - `Day04/README.md`
-  - `Day05/README.md`
+Mỗi ngày của từng thành viên đã được đưa vào một **Thư mục (Directory) riêng** (`Day01/`, `Day02/`, `Day03/`, `Day04/`, `Day05/`) chứa file `README.md`, `BAI_GIANG_CHI_TIET.md` và `MO_TA_NHIEM_VU.md`:
+
+- `SWE_ThieuQuangMinh/` (`Day01` ➔ `Day05`)
+- `DE_NguyenDongAnh/` (`Day01` ➔ `Day05`)
+- `AIE1_TranBaDat/` (`Day01` ➔ `Day05`)
+- `AIE2_LuuTienDuy/` (`Day01` ➔ `Day05`)
+
