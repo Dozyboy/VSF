@@ -1,4 +1,5 @@
 # Ignore build artifacts and output directory
+Build/
 *.log
 .venv/
 node_modules/
