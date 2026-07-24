@@ -59,10 +59,21 @@ Nếu mỗi lần chạy lại pipeline bạn tạo `chunk_id = uuid4()`, thì:
 - Không thể re-index mà giữ nguyên ID.
 - Bộ dữ liệu vàng kiểm thử (Golden Set 30 cases) của AIE-2 sẽ bị hỏng toàn bộ các nhãn trích dẫn (citations) chính xác.
 
-### Quy tắc Deterministic Chunk ID:
-Mọi `chunk_id` phải tuân theo công thức suy nhất:
-$$\text{chunk}_{\text{id}} = \text{doc}_{\text{id}} + \text{"}\#\text{c"} + \text{index}$$
-Ví dụ: `ankor-hr-policy-v1#c0`, `ankor-hr-policy-v1#c1`.
+### Quy tắc Deterministic Chunk ID (`f"{doc_id}#c{index}"`):
+Mọi `chunk_id` được sinh tự động theo công thức ghép chuỗi cố định (thay vì dùng UUID ngẫu nhiên):
+
+```python
+chunk_id = f"{doc_id}#c{index}"
+```
+
+**Giải thích cú pháp:**
+- `{doc_id}`: Mã định danh tài liệu (ví dụ: `ankor-hr-policy-v1`).
+- `#c`: Ký tự phân cách cố định (viết tắt của `#chunk`).
+- `{index}` (hoặc `{n}`): Số thứ tự đoạn chunk trong tài liệu (`0`, `1`, `2`,...).
+
+**Ví dụ thực tế:**
+- Chunk đầu tiên (index = 0) ➔ `ankor-hr-policy-v1#c0`
+- Chunk thứ hai (index = 1) ➔ `ankor-hr-policy-v1#c1`
 
 ---
 
